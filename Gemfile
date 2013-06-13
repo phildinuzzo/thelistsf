@@ -36,3 +36,9 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+gem "rspec-rails", ">= 2.12.2", :group => [:development, :test]
+gem "database_cleaner", ">= 1.0.0.RC1", :group => :test
+gem "email_spec", ">= 1.4.0", :group => :test
+gem "omniauth", ">= 1.1.3"
+gem "omniauth-google-oauth2"
