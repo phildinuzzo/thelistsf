@@ -73,7 +73,7 @@
 #signin a {
   color: #3B3738;
   font-weight: bold;
-  font-size: 11px;
+  font-size: 14px;
 }
 /* end top bar section*/
 
@@ -164,7 +164,7 @@ table {margin-top: 40px;}
     width: 110px; text-align: left; margin-left: 12px;
   }
   table.shows .venue { width: 200px; text-align: left;}
-  table.shows .bands   { width: 1200px; text-align:left; margin-left: 2px;r}
+  table.shows .bands   { width: 1200px; text-align:left; margin-left: 2px;}
   /*table.shows .notes  { width: 900px; text-align:left; display: absolute; float: right; }*/
 
 
