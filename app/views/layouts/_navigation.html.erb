@@ -1,15 +1,16 @@
-<%= link_to "Thelistsf", root_path, :class => 'brand' %>
-<ul class="nav">
+
+<!-- <ul class="nav"> -->
   <% if user_signed_in? %>
-    <li>
+<!--     <li> -->
     Logged in as <%= current_user.name %>
-    </li>
-    <li>
+<!--     </li>
+    <li> -->
     <%= link_to 'Logout', signout_path %>
-    </li>
+<!--     </li> -->
   <% else %>
-    <li>
-    <%= link_to 'Login', signin_path %>
-    </li>
+<!--     <li> -->
+    <%= link_to 'Login to save and email shows', signin_path %>
+<!--     </li> -->
   <% end %>
-</ul>
+<!-- </ul>
+ -->
