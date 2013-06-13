@@ -1,0 +1,69 @@
+<%= form_for(@show) do |f| %>
+  <% if @show.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@show.errors.count, "error") %> prohibited this show from being saved:</h2>
+
+      <ul>
+      <% @show.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.text_field :date %>
+  </div>
+  <div class="field">
+    <%= f.label :bands %><br />
+    <%= f.text_field :bands %>
+  </div>
+  <div class="field">
+    <%= f.label :venue %><br />
+    <%= f.text_field :venue %>
+  </div>
+  <div class="field">
+    <%= f.label :ages %><br />
+    <%= f.text_field :ages %>
+  </div>
+  <div class="field">
+    <%= f.label :price %><br />
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :time %><br />
+    <%= f.text_field :time %>
+  </div>
+  <div class="field">
+    <%= f.label :pit %><br />
+    <%= f.check_box :pit %>
+  </div>
+  <div class="field">
+    <%= f.label :inout %><br />
+    <%= f.check_box :inout %>
+  </div>
+  <div class="field">
+    <%= f.label :sellout %><br />
+    <%= f.check_box :sellout %>
+  </div>
+  <div class="field">
+    <%= f.label :rec %><br />
+    <%= f.text_field :rec %>
+  </div>
+  <div class="field">
+    <%= f.label :soldout %><br />
+    <%= f.check_box :soldout %>
+  </div>
+  <div class="field">
+    <%= f.label :notes %><br />
+    <%= f.text_field :notes %>
+  </div>
+  <div class="field">
+    <%= f.label :cancelled %><br />
+    <%= f.check_box :cancelled %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
