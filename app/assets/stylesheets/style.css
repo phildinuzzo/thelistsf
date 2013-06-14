@@ -176,12 +176,24 @@ table {margin-top: 40px;}
   td.c3 { width: 700px; }
   /*  td.c4 { width: 200px;}*/
 
-  table.shows .date     {
-    width: 180px; text-align: left; margin-left: 12px;
+  table.shows {
+    font-size: 12px;
+    font-weight: bold;
+    font-family: arial;
   }
-  table.shows .venue { width: 250px; text-align: left;}
-  table.shows .bands   { width: 500px; text-align:left; margin-left: 2px;}
-  table.shows .notesheader  { width: 900px; text-align:left; display: absolute; float: right; }
+
+  table.shows .dateheader     {
+    width: 168px; text-align: left; margin-left: 12px;
+  }
+  table.shows .venueheader { width: 210px; text-align: left;}
+  table.shows .bandsheader   { width: 450px; text-align:left; margin-left: 2px;}
+  table.shows .timeheader  { width: 110px; text-align:center; display: absolute;}
+  table.shows .ageheader  { text-align:center; display: absolute; float: right; }
+  table.shows .priceheader  { width: 110px; text-align:center; display: absolute; }
+  table.shows .notesheader  { width: 140px; text-align:center; display: absolute;}
+  table.shows .recheader  { width: 100px; text-align: right; display: absolute;}
+  table.shows .emptyheader  { width: 900px; text-align:left; display: absolute;}
+
 
 .bands {
   width: 500px;
@@ -189,7 +201,6 @@ table {margin-top: 40px;}
 .date {
   width: 180px;
 }
-
 .venue {
   width: 250px;
 }
@@ -208,22 +219,21 @@ table {margin-top: 40px;}
   text-align: center;
   font-size: 12px;
 }
-
 .notes {
   font-size: 11px;
   text-align: center;
   width: 80px;
 }
-
 .rec {
   width: 100px;
   text-align: center;
+  font-weight: bolder;
+  font-size: 15px;
 }
 .save {
   text-align: center;
   width:; 160px;
 }
-
 .empty {
   width: 12px;
 }

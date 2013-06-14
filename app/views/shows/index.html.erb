@@ -9,11 +9,15 @@
   <div class="scrollingArea">
    <table class="shows scrollable">
     <thead>
-     <th><div class="date"></div></th>
-     <th><div class="venue"></div></th>
-     <th><div class="bands"></div></th>
-     <th><div class="notesheader"></div></th>
-     <th><div></div></th>
+     <th><div class="dateheader">Date</div></th>
+     <th><div class="bandsheader">Bands</div></th>
+     <th><div class="venueheader">Venue</div></th>
+     <th><div class="timeheader">Time</div></th>
+     <th><div class="ageheader">Ages</div></th>
+     <th><div class="priceheader">Price</div></th>
+     <th><div class="notesheader">Notes</div></th>
+     <th><div class="recheader">Rec</div></th>
+     <th><div class="emptyheader"></div></th>
 
 
 
@@ -47,8 +51,8 @@
             <% else %>
             <% end %>
             </td>
-            <td class="rec"><%= show.rec %></td>
             <td class="notes"><%= show.notes %></td>
+            <td class="rec"><%= show.rec %></td>
             <td class="empty"></td>
 
           </tr>
@@ -79,8 +83,9 @@
             <% else %>
             <% end %>
             </td>
-            <td class="rec"><%= show.rec %></td>
             <td class="notes"><%= show.notes %></td>
+            <td class="rec"><%= show.rec %></td>
+
             <td class="save">
               <% if user_signed_in? %>
 
