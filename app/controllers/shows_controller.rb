@@ -11,7 +11,7 @@ class ShowsController < ApplicationController
   end
 
   def save_show
-    @user.id = user_id
+    @user_id = params[:user_id]
     @show_id = params[:show_id]
     if SavedShow.where(:show_id => @show_id, :user_id => @user_id).exists?
       SavedShow.where(:show_id => @show_id, :user_id => @user_id).delete_all
