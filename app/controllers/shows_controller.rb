@@ -10,10 +10,10 @@ class ShowsController < ApplicationController
     end
   end
 
-  def save_show(showid)
-    @user = User.find(params[:id])
-    @show_id = showid
-    SavedShow.create(:show_id => @show_id, :user_id => @user.id)
+  def save_show
+    @user.id = user_id
+    @show_id = show_id
+    SavedShow.create(:show_id => @show.id, :user_id => @user.id)
   end
 
   # GET /shows/1

@@ -45,11 +45,15 @@
             <td><%= show.rec %></td>
             <td><%= show.soldout %></td>
             <td><%= show.notes %></td>
-<%= link_to 'Tag it!', {:controller => "shows",
+            <td>
+              <% if user_signed_in? %>
+              <%= link_to 'Save', {:controller => "shows",
                        :action => "save_show",
-                       :user_id => current_user.id,
-                       :item_id => show.id},
-                       :method => "post" %>
+                       :user_id => @user.id,
+                       :show_id => show.id},
+                       :method => "post" %></td>
+              <% else %>
+              <% end %>
 
           </tr>
         <% end %>
