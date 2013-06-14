@@ -11,11 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130613073347) do
+ActiveRecord::Schema.define(:version => 20130614051120) do
+
+  create_table "saved_shows", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.integer  "show_id"
+    t.integer  "user_id"
+  end
 
   create_table "shows", :force => true do |t|
     t.string   "date"
-    t.text     "bands",      :limit => 255
+    t.text     "bands"
     t.string   "venue"
     t.string   "ages"
     t.string   "price"
@@ -27,8 +34,8 @@ ActiveRecord::Schema.define(:version => 20130613073347) do
     t.boolean  "soldout"
     t.string   "notes"
     t.boolean  "cancelled"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|

@@ -1,7 +1,66 @@
-<h1>Listing shows</h1>
 
-<table>
-  <tr>
+<div class="header">
+  <img src="smalltitle.png">
+
+</div>
+
+<div class="scrollableContainer">
+  <div class="scrollingArea">
+   <table class="shows scrollable">
+    <thead>
+     <th><div class="date">Date</div></th>
+     <th><div class="venue">Venue</div></th>
+     <th><div class="bands">Bands</div></th>
+     <th><div class="notes">Notes</div></th>
+    </thead>
+    <tbody>
+      <% @shows.each do |show| %>
+        <% if show.cancelled == true %>
+          <tr class="cancelled">
+            <td><%= show.date %></td>
+            <td><%= show.bands %></td>
+            <td><%= show.venue %></td>
+            <td><%= show.ages %></td>
+            <td><%= show.price %></td>
+            <td><%= show.time %></td>
+            <td><%= show.pit %></td>
+            <td><%= show.inout %></td>
+            <td><%= show.sellout %></td>
+            <td><%= show.rec %></td>
+            <td><%= show.soldout %></td>
+            <td><%= show.notes %></td>
+          </tr>
+        <% else %>
+          <tr>
+            <td><%= show.date %></td>
+            <td><%= show.bands %></td>
+            <td><%= show.venue %></td>
+            <td><%= show.ages %></td>
+            <td><%= show.price %></td>
+            <td><%= show.time %></td>
+            <td><%= show.pit %></td>
+            <td><%= show.inout %></td>
+            <td><%= show.sellout %></td>
+            <td><%= show.rec %></td>
+            <td><%= show.soldout %></td>
+            <td><%= show.notes %></td>
+          </tr>
+        <% end %>
+
+<!--       <td class="c1">
+      <td class="c2">
+      </td>
+      <td class="c3"> -->
+
+      <% end %>
+    </tbody>
+   </table>
+ </div>
+</div>
+
+
+
+<!--   <tr>
     <th>Date</th>
     <th>Bands</th>
     <th>Venue</th>
@@ -18,30 +77,7 @@
     <th></th>
     <th></th>
     <th></th>
-  </tr>
+  </tr> -->
 
-<% @shows.each do |show| %>
-  <tr>
-    <td><%= show.date %></td>
-    <td><%= show.bands %></td>
-    <td><%= show.venue %></td>
-    <td><%= show.ages %></td>
-    <td><%= show.price %></td>
-    <td><%= show.time %></td>
-    <td><%= show.pit %></td>
-    <td><%= show.inout %></td>
-    <td><%= show.sellout %></td>
-    <td><%= show.rec %></td>
-    <td><%= show.soldout %></td>
-    <td><%= show.notes %></td>
-    <td><%= show.cancelled %></td>
-    <td><%= link_to 'Show', show %></td>
-    <td><%= link_to 'Edit', edit_show_path(show) %></td>
-    <td><%= link_to 'Destroy', show, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
 
-<br />
 
-<%= link_to 'New Show', new_show_path %>
