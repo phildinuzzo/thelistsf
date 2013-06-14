@@ -47,10 +47,10 @@
             <td><%= show.soldout %></td>
             <td><%= show.notes %></td>
             <td>
-              <% if @user_id != nil %>
+              <% if user_signed_in? %>
               <%= link_to 'Save', {:controller => "shows",
                        :action => "save_show",
-                       :user_id => @user.id,
+                       :user_id => @current_user.id,
                        :show_id => show.id},
                        :method => "post" %></td>
               <% else %>
