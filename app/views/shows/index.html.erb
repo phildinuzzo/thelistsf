@@ -50,7 +50,7 @@
             <td><%= show.rec %></td>
             <td><%= show.soldout %></td>
             <td><%= show.notes %></td>
-            <td>
+            <td class="save">
               <% if user_signed_in? %>
 
               <%= link_to 'Save', {:controller => "shows",
