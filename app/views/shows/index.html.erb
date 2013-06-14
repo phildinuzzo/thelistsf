@@ -21,9 +21,11 @@
             <td><%= show.date %></td>
             <td><%= show.bands %></td>
             <td><%= show.venue %></td>
-            <td><%= show.ages %></td>
-            <td><%= show.price %></td>
             <td><%= show.time %></td>
+            <td><%= show.ages %></td>
+
+            <td><%= show.price %></td>
+
             <td><%= show.pit %></td>
             <td><%= show.inout %></td>
             <td><%= show.sellout %></td>
@@ -37,9 +39,11 @@
             <td><%= show.date %></td>
             <td><%= show.bands %></td>
             <td><%= show.venue %></td>
-            <td><%= show.ages %></td>
-            <td><%= show.price %></td>
             <td><%= show.time %></td>
+            <td><%= show.ages %></td>
+
+            <td><%= show.price %></td>
+
             <td><%= show.pit %></td>
             <td><%= show.inout %></td>
             <td><%= show.sellout %></td>
@@ -47,14 +51,7 @@
             <td><%= show.soldout %></td>
             <td><%= show.notes %></td>
             <td>
-              <% if user_signed_in? %>
-              <%= link_to 'Save', {:controller => "shows",
-                       :action => "save_show",
-                       :user_id => @user.id,
-                       :show_id => show.id},
-                       :method => "post" %></td>
-              <% else %>
-              <% end %>
+
 
           </tr>
         <% end %>
