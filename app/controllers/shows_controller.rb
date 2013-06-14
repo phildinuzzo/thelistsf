@@ -12,7 +12,7 @@ class ShowsController < ApplicationController
 
   def saved
 
-    @saved_shows = SavedShow.where(:user_id => current_user.id)
+    @saved_shows = SavedShow.where(:user_id => nil)
     @savedshows = []
     @saved_shows.each do |i|
       @savedshows << i.show_id

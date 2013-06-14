@@ -52,11 +52,15 @@
             <td><%= show.notes %></td>
             <td>
               <% if user_signed_in? %>
+              <% if SavedShow.show_id == show.id && SavedShow.user_id == current_user.id %>
+              Hey.
+              <% else %>
               <%= link_to 'Save', {:controller => "shows",
                        :action => "save_show",
                        :user_id => current_user.id,
                        :show_id => show.id},
                        :method => "post" %></td>
+                       <% end %>
               <% else %>
               <% end %>
 
