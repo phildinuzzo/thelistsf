@@ -2,7 +2,7 @@
 <div class="header">
   <img src="smalltitle.png">
 
-<%= "#{current_user.id}" %>
+<%= "#{@user_id}" %>
 </div>
 
 <div class="scrollableContainer">
@@ -51,7 +51,14 @@
             <td><%= show.soldout %></td>
             <td><%= show.notes %></td>
             <td>
-
+              <% if user_signed_in? %>
+              <%= link_to 'Save', {:controller => "shows",
+                       :action => "save_show",
+                       :user_id => current_user.id,
+                       :show_id => show.id},
+                       :method => "post" %></td>
+              <% else %>
+              <% end %>
 
           </tr>
         <% end %>
