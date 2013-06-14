@@ -15,7 +15,11 @@
      <th><div class="notes">Notes</div></th>
     </thead>
     <tbody>
-      <% @shows.each do |show| %>
+    <% if @savedshows == nil %>
+    You haven't saved any shows.
+    <%= link_to 'Back to shows', shows_path %>
+    <% else %>
+      <% @savedshows.each do |show| %>
         <% if show.cancelled == true %>
           <tr class="cancelled">
             <td><%= show.date %></td>
@@ -51,17 +55,10 @@
             <td><%= show.soldout %></td>
             <td><%= show.notes %></td>
             <td>
-              <% if user_signed_in? %>
-              <%= link_to 'Save', {:controller => "shows",
-                       :action => "save_show",
-                       :user_id => current_user.id,
-                       :show_id => show.id},
-                       :method => "post" %></td>
-              <% else %>
-              <% end %>
+        <% end %>
 
           </tr>
-        <% end %>
+     <% end %>
 
 <!--       <td class="c1">
       <td class="c2">

@@ -5,6 +5,7 @@
     Logged in as <%= current_user.name %>
 <!--     </li>
     <li> -->
+    <%= link_to 'Saved Shows', saved_path %>
     <%= link_to 'Logout', signout_path %>
 <!--     </li> -->
   <% else %>

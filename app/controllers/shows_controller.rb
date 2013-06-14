@@ -10,6 +10,15 @@ class ShowsController < ApplicationController
     end
   end
 
+  def saved
+    @savedshows = SavedShow.where(:user_id => params[:user_id])
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @shows }
+    end
+  end
+
   def save_show
     @user_id = params[:user_id]
     @show_id = params[:show_id]
