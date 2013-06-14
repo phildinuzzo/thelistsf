@@ -11,7 +11,7 @@ class ShowsController < ApplicationController
   end
 
   def saved
-    @savedshows = SavedShow.where(:user_id => params[:user_id])
+    @savedshows = SavedShow.where(:user_id => current_user.id)
 
     respond_to do |format|
       format.html # index.html.erb

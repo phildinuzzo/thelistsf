@@ -2,10 +2,10 @@
 <!-- <ul class="nav"> -->
   <% if user_signed_in? %>
 <!--     <li> -->
-    Logged in as <%= current_user.name %>
+    Logged in as <%= current_user.name %><br>
 <!--     </li>
     <li> -->
-    <%= link_to 'Saved Shows', saved_path %>
+    <%= link_to 'Saved Shows', saved_path %><br>
     <%= link_to 'Logout', signout_path %>
 <!--     </li> -->
   <% else %>
