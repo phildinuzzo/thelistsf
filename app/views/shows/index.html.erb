@@ -24,6 +24,12 @@
     </thead>
     <tbody>
       <% @shows.each do |show| %>
+      <% a = show.date %>
+      <% if a == nil %>
+      <% else %>
+      <% if Date.parse(a) < Date.today %>
+      <% else %>
+
         <% if show.cancelled == true %>
           <tr class="cancelled">
             <td class="date"><%= show.date %></td>
@@ -99,6 +105,8 @@
             <td class="empty"></td>
           </tr>
         <% end %>
+        <% end %>
+                <% end %>
 
 <!--       <td class="c1">
       <td class="c2">
