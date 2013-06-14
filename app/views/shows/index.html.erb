@@ -50,7 +50,7 @@
               <% if user_signed_in? %>
               <%= link_to 'Save', {:controller => "shows",
                        :action => "save_show",
-                       :user_id => @current_user.id,
+                       :user_id => @user.id,
                        :show_id => show.id},
                        :method => "post" %></td>
               <% else %>
