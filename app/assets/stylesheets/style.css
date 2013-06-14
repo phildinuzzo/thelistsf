@@ -26,7 +26,7 @@
 }
 
 #bigtitle {
-  margin: 39px 0 73px 1px;
+  margin: 41px 0 73px 1px;
   font-size: 185px;
   font-weight: 90;
   color: black;
@@ -150,7 +150,7 @@ table.shows tr:hover {background-color: #A393AD}
     position: relative;
     padding-top: 0em;
     margin: 0px;
-    border: 1px solid #999;
+/*    border: 1px solid #999;*/
     background: #aab;
     }
 
@@ -183,11 +183,36 @@ table {margin-top: 40px;}
   table.shows .bands   { width: 1200px; text-align:left; margin-left: 2px;}
   /*table.shows .notes  { width: 900px; text-align:left; display: absolute; float: right; }*/
 
+
 .date {
   width: 200px;
 }
 
+.venue {
+  width: 200px;
+}
+.time {
+  text-align: center;
+  width: 80px;
+  font-size: 11px;
+}
+.price {
+  width: 80px;
+  font-size: 11px;
+  text-align: center;
+}
+.boolean {
+  width: 35px;
+  text-align: center;
+}
+
+.notes {
+  font-size: 11px;
+  text-align: center;
+  width: 80px;
+}
 .save {
-  margin-right: 15px;
+  text-align: center;
+  width:; 160px;
 }
 
