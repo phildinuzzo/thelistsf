@@ -13,8 +13,8 @@ class ShowsController < ApplicationController
   def saved
 
     @saved_shows = SavedShow.where(:user_id => current_user.id)
-    @shows = Shows.all
-    @savedshows = Shows.where(:show_id => @saved_shows.show_id)
+
+    @savedshows = SHows.where(:id => @saved_shows.show_id)
 
     respond_to do |format|
       format.html # index.html.erb
