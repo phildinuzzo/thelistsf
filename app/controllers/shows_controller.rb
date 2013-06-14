@@ -12,11 +12,15 @@ class ShowsController < ApplicationController
 
   def save_show
     @user.id = user_id
-    @show_id = show_id
-    if SavedShow.where(:show_id => @show.id, :user_id => @user.id).exists?
-      SavedShow.where(:show_id => @show.id, :user_id => @user.id).delete_all
+    @show_id = params[:show_id]
+    if SavedShow.where(:show_id => @show_id, :user_id => @user_id).exists?
+      SavedShow.where(:show_id => @show_id, :user_id => @user_id).delete_all
     else
-      SavedShow.create(:show_id => @show.id, :user_id => @user.id)
+      SavedShow.create(:show_id => @show_id, :user_id => @user_id)
+    end
+    respond_to do |format|
+      format.html { redirect_to shows_url }
+      format.json { head :no_content }
     end
   end
 
