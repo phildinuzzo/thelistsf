@@ -18,7 +18,7 @@
       <% @shows.each do |show| %>
         <% if show.cancelled == true %>
           <tr class="cancelled">
-            <td><%= show.date %></td>
+            <td class="date"><%= show.date %></td>
             <td><%= show.bands %></td>
             <td><%= show.venue %></td>
             <td><%= show.time %></td>

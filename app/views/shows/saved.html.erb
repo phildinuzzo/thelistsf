@@ -15,11 +15,16 @@
      <th><div class="notes">Notes</div></th>
     </thead>
     <tbody>
+
+
+
     <% if @savedshows == nil %>
     You haven't saved any shows.
     <%= link_to 'Back to shows', shows_path %>
     <% else %>
-      <% @savedshows.each do |show| %>
+      <% @savedshows.each do |i| %>
+      <% @work = Show.where(:id => i)%>
+      <% @work.each do |show| %>
         <% if show.cancelled == true %>
           <tr class="cancelled">
             <td><%= show.date %></td>
@@ -59,7 +64,7 @@
 
           </tr>
      <% end %>
-
+     <% end %>
 <!--       <td class="c1">
       <td class="c2">
       </td>

@@ -183,5 +183,8 @@ table {margin-top: 40px;}
   table.shows .bands   { width: 1200px; text-align:left; margin-left: 2px;}
   /*table.shows .notes  { width: 900px; text-align:left; display: absolute; float: right; }*/
 
+.date {
+  width: 200px;
+}
 
 
