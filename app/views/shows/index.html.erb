@@ -2,7 +2,7 @@
 <div class="header">
   <img src="smalltitle.png">
 
-
+<%= "#{@user_id}" %>
 </div>
 
 <div class="scrollableContainer">
@@ -47,7 +47,7 @@
             <td><%= show.soldout %></td>
             <td><%= show.notes %></td>
             <td>
-              <% if @user.id != nil %>
+              <% if @user_id != nil %>
               <%= link_to 'Save', {:controller => "shows",
                        :action => "save_show",
                        :user_id => @user.id,
