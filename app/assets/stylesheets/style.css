@@ -139,7 +139,7 @@ body {
    background-color: white;
 }*/
 
-  table.shows th { background: black; color: white; font-size: 18px; font-family: 'Special Elite';}
+  table.shows th { background: black; color: white; font-size: 16px; font-family: 'Special Elite';}
 /*  table.shows td { background: #eee; }*/
   table.shows tr:nth-child(odd) {background-color: #eee;}
   table.shows tr:nth-child(even) {background-color: #C4B3B5;}
@@ -162,36 +162,33 @@ table.shows tr:hover {background-color: #A393AD}
   table.scrollable thead {
     top: 0;
     position: absolute;
+    width: 100%;
+    font-family: verdana;
 /*    font-family: arial;*/
    }
 
 table {margin-top: 40px;}
 
-  tr { height: 40px;
+  tr { height: 41px;
       border-bottom: 2px solid black;
-    border-top: 2px solid black;}
+      border-top: 2px solid black;}
 
-  td.c1 { width: 110px; padding-left: 10px;}
-  td.c2 { width: 200px; }
-  td.c3 { width: 700px; }
-  /*  td.c4 { width: 200px;}*/
-
-  table.shows {
+  table.shows thead{
     font-size: 12px;
     font-weight: bold;
-    font-family: arial;
+    font-family: verdana;
   }
 
   table.shows .dateheader     {
-    width: 168px; text-align: left; margin-left: 12px;
+    width: 120px; text-align: left; margin-left: 50px; font-family: verdana,'Special Elite';
   }
-  table.shows .venueheader { width: 210px; text-align: left;}
-  table.shows .bandsheader   { width: 450px; text-align:left; margin-left: 2px;}
-  table.shows .timeheader  { width: 110px; text-align:center; display: absolute;}
-  table.shows .ageheader  { text-align:center; display: absolute; float: right; }
-  table.shows .priceheader  { width: 110px; text-align:center; display: absolute; }
-  table.shows .notesheader  { width: 140px; text-align:center; display: absolute;}
-  table.shows .recheader  { width: 100px; text-align: right; display: absolute;}
+  table.shows .venueheader { width: 210px; text-align: left; font-family: verdana;}
+  table.shows .bandsheader   { width: 450px; text-align:left; margin-left: 2px; font-family: verdana;}
+  table.shows .timeheader  { width: 110px; text-align:center; display: absolute; font-family: verdana;}
+  table.shows .ageheader  { text-align:center; display: absolute; float: right; font-family: verdana;}
+  table.shows .priceheader  { width: 110px; text-align:center; display: absolute; font-family: verdana;}
+  table.shows .notesheader  { width: 160px; text-align:center; display: absolute; font-family: verdana;}
+  table.shows .recheader  { width: 100px; text-align: right; display: absolute; font-family: verdana;}
   table.shows .emptyheader  { width: 900px; text-align:left; display: absolute;}
 
 
@@ -200,6 +197,7 @@ table {margin-top: 40px;}
 }
 .date {
   width: 180px;
+  text-align: center;
 }
 .venue {
   width: 250px;
