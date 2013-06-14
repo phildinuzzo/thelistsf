@@ -12,7 +12,7 @@
      <th><div class="date">Date</div></th>
      <th><div class="venue">Venue</div></th>
      <th><div class="bands">Bands</div></th>
-     <th><div class="notes">Notes</div></th>
+     <th><div class="notesheader">Notes</div></th>
     </thead>
     <tbody>
 
@@ -27,67 +27,66 @@
       <% @work.each do |show| %>
         <% if show.cancelled == true %>
           <tr class="cancelled">
-            <td><%= show.date %></td>
-            <td><%= show.bands %></td>
+            <td class="date"><%= show.date %></td>
+            <td class="bands"><%= show.bands %></td>
             <td class="venue"><%= show.venue %></td>
             <td class="time"><%= show.time %></td>
             <td><%= show.ages %></td>
             <td class="price"><%= show.price %></td>
+
+            <td class="boolean">
             <% if show.pit != false %>
-              <td class="boolean">X</td>
+              Pit warning!
             <% else %>
-              <td class="boolean"></td>
             <% end %>
             <% if show.inout != false %>
-              <td class="boolean">X</td>
+              No in/out!
             <% else %>
-              <td class="boolean"></td>
             <% end %>
             <% if show.sellout != false %>
-              <td class="boolean">X</td>
+              Likely sell-out!
             <% else %>
-              <td class="boolean"></td>
             <% end %>
-            <td class="boolean"><%= show.rec %></td>
             <% if show.soldout != false %>
-              <td class="boolean">X</td>
+              SOLDOUT!
             <% else %>
-              <td class="boolean"></td>
             <% end %>
+            </td>
+            <td class="rec"><%= show.rec %></td>
             <td class="notes"><%= show.notes %></td>
+            <td class="empty"></td>
 
           </tr>
         <% else %>
           <tr>
-            <td><%= show.date %></td>
-            <td><%= show.bands %></td>
+            <td class="date"><%= show.date %></td>
+            <td class="bands"><%= show.bands %></td>
             <td class="venue"><%= show.venue %></td>
             <td class="time"><%= show.time %></td>
             <td><%= show.ages %></td>
             <td class="price"><%= show.price %></td>
+
+            <td class="boolean">
             <% if show.pit != false %>
-              <td class="boolean">X</td>
+              Pit warning!
             <% else %>
-              <td class="boolean"></td>
             <% end %>
             <% if show.inout != false %>
-              <td class="boolean">X</td>
+              No in/out!
             <% else %>
-              <td class="boolean"></td>
             <% end %>
             <% if show.sellout != false %>
-              <td class="boolean">X</td>
+              Likely sell-out!
             <% else %>
-              <td class="boolean"></td>
             <% end %>
-            <td class="boolean"><%= show.rec %></td>
             <% if show.soldout != false %>
-              <td class="boolean">X</td>
+              SOLDOUT!
             <% else %>
-              <td class="boolean"></td>
             <% end %>
+            </td>
+            <td class="rec"><%= show.rec %></td>
             <td class="notes"><%= show.notes %></td>
-            <td>
+            <td class="empty"></td>
         <% end %>
 
           </tr>
