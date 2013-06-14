@@ -1,7 +1,7 @@
 Thelistsf::Application.routes.draw do
   resources :shows
 
-  match '/shows/save_show' => 'shows#save_show'
+  post '/shows' => 'shows#save_show'
 
   root :to => "home#index"
   resources :users, :only => [:index, :show, :edit, :update ]

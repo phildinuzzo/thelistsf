@@ -13,7 +13,11 @@ class ShowsController < ApplicationController
   def save_show
     @user.id = user_id
     @show_id = show_id
-    SavedShow.create(:show_id => @show.id, :user_id => @user.id)
+    if SavedShow.where(:show_id => @show.id, :user_id => @user.id).exists?
+      SavedShow.where(:show_id => @show.id, :user_id => @user.id).delete_all
+    else
+      SavedShow.create(:show_id => @show.id, :user_id => @user.id)
+    end
   end
 
   # GET /shows/1
