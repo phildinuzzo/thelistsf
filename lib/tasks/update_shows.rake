@@ -1,7 +1,4 @@
 
-# require "/app/models/show"
-# require '#{Rails.root}/app/models/show'
-# include 'show.rb'
 require 'open-uri'
 require 'date'
 
