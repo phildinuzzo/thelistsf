@@ -104,9 +104,6 @@ body {
 /*  float: right;*/
 }
 
-.header {
-  height: 100px;
-}
 
 .link {
   text-align: center;
@@ -121,83 +118,70 @@ body {
   color: white;
 }
 
-
 .cancelled {
   color: red;
-  text-decoration: line-through;
 }
 
-  table.shows {
-    font-family: arial, helvetica, sans-serif;
-    font-size: 13px;
-    font-weight: bold;
-    border-collapse: collapse;
-    width: 100%;
-    }
+table.shows {
+  font-family: arial;
+  font-size: 13px;
+  font-weight: bold;
+  border-collapse: collapse;
+  width: 100%;
+}
 
-/*tbody tr:nth-child(odd) {
-   background-color: white;
-}*/
 
-  table.shows th { background: black; color: white; font-size: 16px; font-family: 'Special Elite';}
-/*  table.shows td { background: #eee; }*/
-  table.shows tr:nth-child(odd) {background-color: #eee;}
-  table.shows tr:nth-child(even) {background-color: #C4B3B5;}
+table.shows tr:nth-child(odd) {background-color: #eee;}
+table.shows tr:nth-child(even) {background-color: #C4B3B5;}
 
 table.shows tr:hover {background-color: #A393AD}
 
-  div.scrollableContainer {
-    position: relative;
-    padding-top: 0em;
-    margin: 0px;
-/*    border: 1px solid #999;*/
-    background: #aab;
-    }
-
-  div.scrollingArea {
-    height: 600px;
-    overflow: auto;
-    }
-
-  table.scrollable thead {
-    top: 0;
-    position: absolute;
-    width: 100%;
-    font-family: verdana;
-/*    font-family: arial;*/
-   }
-
-table {margin-top: 40px;}
-
-  tr { height: 41px;
-      border-bottom: 2px solid black;
-      border-top: 2px solid black;}
-
-  table.shows thead{
-    font-size: 12px;
-    font-weight: bold;
-    font-family: verdana;
-  }
-
-  table.shows .dateheader     {
-    width: 120px; text-align: left; margin-left: 50px; font-family: verdana,'Special Elite';
-  }
-  table.shows .venueheader { width: 210px; text-align: left; font-family: verdana;}
-  table.shows .bandsheader   { width: 450px; text-align:left; margin-left: 2px; font-family: verdana;}
-  table.shows .timeheader  { width: 110px; text-align:center; display: absolute; font-family: verdana;}
-  table.shows .ageheader  { text-align:center; display: absolute; float: right; font-family: verdana;}
-  table.shows .priceheader  { width: 110px; text-align:center; display: absolute; font-family: verdana;}
-  table.shows .notesheader  { width: 160px; text-align:center; display: absolute; font-family: verdana;}
-  table.shows .recheader  { width: 100px; text-align: right; display: absolute; font-family: verdana;}
-  table.shows .emptyheader  { width: 900px; text-align:left; display: absolute;}
-
-
-.bands {
-  width: 500px;
+div.scrollableContainer {
+  position: relative;
+  padding-top: 0em;
+  margin: 0px;
+  background: #aab;
 }
+
+div.scrollingArea {
+  height: 600px;
+  overflow: auto;
+}
+
+table.shows tr { height: 41px;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;}
+
+.header {
+  background: black;
+  color: white;
+  font-size: 16px;
+  font-family: arial;
+ /* display: absolute;*/
+  text-align: left;
+}
+
+.headerrow {
+  max-height: 40px;
+  text-align: left;
+}
+
+.dateheader { width: 140px; max-width: 180px; text-align: center;}
+.bandsheader { width: 400px; max-width: 500px; }
+.venueheader { width: 220px; max-width: 250px;  }
+.timeheader { width: 70px; }
+.ageheader { width: 70px; }
+.priceheader { width: 100px;}
+.notesheader { width: 160px; }
+.recheader { width: 70px; }
+.emptyheader { width: 900px; }
+
 .date {
   width: 180px;
   text-align: center;
+}
+.bands {
+  width: 500px;
 }
 .venue {
   width: 250px;
@@ -206,6 +190,11 @@ table {margin-top: 40px;}
   text-align: center;
   width: 110px;
   font-size: 11px;
+}
+.ages {
+  width: 60px;
+  text-align: center;
+  font-size: 12px;
 }
 .price {
   width: 110px;

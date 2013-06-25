@@ -10,6 +10,15 @@ class ShowsController < ApplicationController
     end
   end
 
+  def archive
+    @shows = Show.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @shows }
+    end
+  end
+
   def saved
 
     @saved_shows = SavedShow.where(:user_id => current_user.id)

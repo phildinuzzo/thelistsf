@@ -1,12 +1,7 @@
 
 
 
-<!--   <div id="signin">
-    <% @users.each do |user| %>
-      <p>User: <%=link_to user.name, user %></p>
-    <% end %>
-  </div>
- -->
+
 
 
 
@@ -19,9 +14,18 @@
 </div>
 
 <div id="bgimage2">
-<br><br>
-<h3 class="link">  <%= link_to 'See All Shows', shows_path %>
-</h3>
+  <br><br>
+  <h3 class="link">  <%= link_to 'See Upcoming Shows', shows_path %>
+  </h3>
+  <h4 class="link">  <%= link_to 'See Archived Shows', archive_path %>
+  </h4>
+    <% if user_signed_in? %>
 
+      <h4 class="link"><%= link_to 'See Saved Shows', {:controller => "shows",
+                         :action => "saved"},
+                         :method => "get" %>
+      </h4>
+    <% else %>
+    <% end %>
 
 </div>

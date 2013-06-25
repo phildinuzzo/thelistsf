@@ -10,4 +10,5 @@ Thelistsf::Application.routes.draw do
   match '/signout' => 'sessions#destroy', :as => :signout
   match '/auth/failure' => 'sessions#failure'
   get '/saved' => 'shows#saved'
+  get '/archive' => 'shows#archive'
 end

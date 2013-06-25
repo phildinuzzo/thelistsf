@@ -18,18 +18,20 @@
      <th><div class="notesheader">Notes</div></th>
      <th><div class="recheader">Rec</div></th>
      <th><div class="emptyheader"></div></th>
+
+
+
     </thead>
     <tbody>
+      <% @shows.each do |show| %>
+      <% a = show.date %>
+       <% if a == nil %>
+      <% else %>
+      <% b = Date.parse(a).strftime('%a, %b %d') %>
+      <% c = Date.parse(b) %>
+        <% if c > Date.today %>
+        <% else %>
 
-
-
-    <% if @savedshows == nil %>
-    You haven't saved any shows.
-    <%= link_to 'Back to shows', shows_path %>
-    <% else %>
-      <% @savedshows.each do |i| %>
-      <% @work = Show.where(:id => i)%>
-      <% @work.each do |show| %>
         <% if show.cancelled == true %>
           <tr class="cancelled">
             <td class="date"><%= show.date %></td>
@@ -75,12 +77,22 @@
             <td class="notes"><%= show.notes %></td>
             <td class="rec"><%= show.rec %></td>
 
-            <td class="empty"></td>
-        <% end %>
+            <td class="save">
+              <% if user_signed_in? %>
 
+              <%= link_to 'Save', {:controller => "shows",
+                       :action => "save_show",
+                       :user_id => current_user.id,
+                       :show_id => show.id},
+                       :method => "post" %></td>
+              <% else %>
+              <% end %>
+            <td class="empty"></td>
           </tr>
-     <% end %>
-     <% end %>
+        <% end %>
+        <% end %>
+                <% end %>
+
 <!--       <td class="c1">
       <td class="c2">
       </td>
@@ -91,27 +103,3 @@
    </table>
  </div>
 </div>
-
-
-
-<!--   <tr>
-    <th>Date</th>
-    <th>Bands</th>
-    <th>Venue</th>
-    <th>Ages</th>
-    <th>Price</th>
-    <th>Time</th>
-    <th>Pit</th>
-    <th>Inout</th>
-    <th>Sellout</th>
-    <th>Rec</th>
-    <th>Soldout</th>
-    <th>Notes</th>
-    <th>Cancelled</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr> -->
-
-
-

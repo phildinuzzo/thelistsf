@@ -5,10 +5,33 @@
 
 </div>
 
+<!-- <div class="scrollableContainer">
+  <div class="scrollingArea"> -->
+   <table class="shows scrollable">
+
+    <tbody>
+      <tr class="headerrow">
+        <td class="dateheader header">Date</td>
+        <td class="bandsheader header">Bands</td>
+        <td class="venueheader header">Venue</td>
+        <td class="timeheader header">Time</td>
+        <td class="ageheader header">Ages</td>
+        <td class="priceheader header">Price</td>
+        <td class="notesheader header">Notes</td>
+        <td class="recheader header">Steve's Rec</td>
+      </tr>
+
+    </tbody>
+   </table>
+<!--  </div>
+</div> -->
+
+
+
 <div class="scrollableContainer">
   <div class="scrollingArea">
    <table class="shows scrollable">
-    <thead>
+<!--     <thead>
      <th><div class="dateheader">Date</div></th>
      <th><div class="bandsheader">Bands</div></th>
      <th><div class="venueheader">Venue</div></th>
@@ -18,76 +41,58 @@
      <th><div class="notesheader">Notes</div></th>
      <th><div class="recheader">Rec</div></th>
      <th><div class="emptyheader"></div></th>
-
-
-
-    </thead>
+    </thead> -->
     <tbody>
       <% @shows.each do |show| %>
       <% a = show.date %>
       <% if a == nil %>
       <% else %>
-      <% if Date.parse(a) < Date.today %>
-      <% else %>
-
-        <% if show.cancelled == true %>
-          <tr class="cancelled">
-            <td class="date"><%= show.date %></td>
-            <td class="bands"><%= show.bands %></td>
-            <td class="venue"><%= show.venue %></td>
-            <td class="time"><%= show.time %></td>
-            <td><%= show.ages %></td>
-            <td class="price"><%= show.price %></td>
-
-            <td class="boolean">
-            <% if show.pit != false %>
-              Pit warning!
-            <% else %>
-            <% end %>
-            <% if show.inout != false %>
-              No in/out!
-            <% else %>
-            <% end %>
-            <% if show.sellout != false %>
-              Likely sell-out!
-            <% else %>
-            <% end %>
-            <% if show.soldout != false %>
-              SOLDOUT!
-            <% else %>
-            <% end %>
-            </td>
-            <td class="notes"><%= show.notes %></td>
-            <td class="rec"><%= show.rec %></td>
-            <td class="empty"></td>
-
-          </tr>
+      <% b = Date.parse(a).strftime('%a, %b %d') %>
+      <% c = Date.parse(b) %>
+        <% if c < Date.today %>
         <% else %>
-          <tr>
-            <td class="date"><%= show.date %></td>
-            <td class="bands"><%= show.bands %></td>
-            <td class="venue"><%= show.venue %></td>
-            <td class="time"><%= show.time %></td>
-            <td><%= show.ages %></td>
-            <td class="price"><%= show.price %></td>
 
-            <td class="boolean">
-            <% if show.pit != false %>
-              Pit warning!
-            <% else %>
-            <% end %>
-            <% if show.inout != false %>
-              No in/out!
-            <% else %>
-            <% end %>
-            <% if show.sellout != false %>
-              Likely sell-out!
-            <% else %>
-            <% end %>
-            <% if show.soldout != false %>
-              SOLDOUT!
-            <% else %>
-            <% end %>
+          <% if show.cancelled == true %>
+            <tr class="cancelled">
+              <td class="date"><%= show.date %></td>
+              <td class="bands"><%= show.bands %></td>
+              <td class="venue"><%= show.venue %></td>
+              <td class="time"></td>
+              <td></td>
+              <td class="price"></td>
+              <td class="boolean">
+              </td>
+              <td class="notes"><%= show.notes %></td>
+              <td class="rec"></td>
+              <td class="empty"></td>
+
+            </tr>
+          <% else %>
+            <tr>
+              <td class="date"><%= show.date %></td>
+              <td class="bands"><%= show.bands %></td>
+              <td class="venue"><%= show.venue %></td>
+              <td class="time"><%= show.time %></td>
+              <td class="ages"><%= show.ages %></td>
+              <td class="price"><%= show.price %></td>
+
+              <td class="boolean">
+              <% if show.pit != false %>
+                Pit warning!
+              <% else %>
+              <% end %>
+              <% if show.inout != false %>
+                No in/out!
+              <% else %>
+              <% end %>
+              <% if show.sellout != false %>
+                Likely sell-out!
+              <% else %>
+              <% end %>
+              <% if show.soldout != false %>
+                SOLDOUT!
+              <% else %>
+              <% end %>
             </td>
             <td class="notes"><%= show.notes %></td>
             <td class="rec"><%= show.rec %></td>
@@ -106,7 +111,7 @@
           </tr>
         <% end %>
         <% end %>
-                <% end %>
+      <% end %>
 
 <!--       <td class="c1">
       <td class="c2">
