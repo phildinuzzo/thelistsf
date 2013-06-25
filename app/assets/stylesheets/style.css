@@ -174,7 +174,7 @@ table.shows tr { height: 41px;
 .priceheader { width: 100px;}
 .notesheader { width: 160px; }
 .recheader { width: 70px; }
-.saveheader { width: 150px;}
+.saveheader { width: 120px; text-align: center;}
 .emptyheader { width: 900px; }
 
 .date {
