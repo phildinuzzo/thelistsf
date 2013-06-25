@@ -167,7 +167,7 @@ table.shows tr { height: 41px;
 }
 
 .dateheader { width: 140px; max-width: 180px; text-align: center;}
-.bandsheader { width: 400px; max-width: 500px; }
+.bandsheader { width: 375px; max-width: 500px; }
 .venueheader { width: 220px; max-width: 250px;  }
 .timeheader { width: 70px; }
 .ageheader { width: 70px; }
