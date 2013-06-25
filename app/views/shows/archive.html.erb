@@ -5,23 +5,26 @@
 
 </div>
 
+   <table class="shows scrollable">
+
+    <tbody>
+      <tr class="headerrow">
+        <td class="dateheader header">Date</td>
+        <td class="bandsheader header">Bands</td>
+        <td class="venueheader header">Venue</td>
+        <td class="timeheader header">Time</td>
+        <td class="ageheader header">Ages</td>
+        <td class="priceheader header">Price</td>
+        <td class="notesheader header">Notes</td>
+        <td class="recheader header">Steve's Rec</td>
+      </tr>
+
+    </tbody>
+   </table>
+
 <div class="scrollableContainer">
   <div class="scrollingArea">
    <table class="shows scrollable">
-    <thead>
-     <th><div class="dateheader">Date</div></th>
-     <th><div class="bandsheader">Bands</div></th>
-     <th><div class="venueheader">Venue</div></th>
-     <th><div class="timeheader">Time</div></th>
-     <th><div class="ageheader">Ages</div></th>
-     <th><div class="priceheader">Price</div></th>
-     <th><div class="notesheader">Notes</div></th>
-     <th><div class="recheader">Rec</div></th>
-     <th><div class="emptyheader"></div></th>
-
-
-
-    </thead>
     <tbody>
       <% @shows.each do |show| %>
       <% a = show.date %>
