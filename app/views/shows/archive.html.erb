@@ -80,16 +80,6 @@
             <td class="notes"><%= show.notes %></td>
             <td class="rec"><%= show.rec %></td>
 
-            <td class="save">
-              <% if user_signed_in? %>
-
-              <%= link_to 'Save', {:controller => "shows",
-                       :action => "save_show",
-                       :user_id => current_user.id,
-                       :show_id => show.id},
-                       :method => "post" %></td>
-              <% else %>
-              <% end %>
             <td class="empty"></td>
           </tr>
         <% end %>
