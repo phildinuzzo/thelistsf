@@ -2,11 +2,9 @@
 <div class="header">
   <a href="/"><img src="smalltitle.png"></a>
 
-
 </div>
 
-   <table class="shows scrollable">
-
+   <table class="shows">
     <tbody>
       <tr class="headerrow">
         <td class="dateheader header">Date</td>
@@ -17,15 +15,20 @@
         <td class="priceheader header">Price</td>
         <td class="notesheader header">Notes</td>
         <td class="recheader header">Steve's Rec</td>
+        <% if user_signed_in? %>
+        <td class="saveheader header">Save</td>
+        <% end %>
       </tr>
 
     </tbody>
    </table>
 
 
-<div class="scrollableContainer">
+
+
+<div>
   <div class="scrollingArea">
-   <table class="shows scrollable">
+   <table class="shows">
     <tbody>
 
     <% if @savedshows == nil %>
