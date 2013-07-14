@@ -121,36 +121,35 @@ body {
 .cancelled {
   color: red;
 }
+/* shows table */
 
-table.shows {
+.shows {
   font-family: arial;
   font-size: 13px;
   font-weight: bold;
   border-collapse: collapse;
   width: 100%;
+  min-width: 1200px;
+  max-width: 1600px;
 }
-
 
 table.shows tr:nth-child(odd) {background-color: #eee;}
 table.shows tr:nth-child(even) {background-color: #C4B3B5;}
 
 table.shows tr:hover {background-color: #A393AD}
 
-div.scrollableContainer {
-  position: relative;
-  padding-top: 0em;
-  margin: 0px;
-  background: #aab;
-}
-
-div.scrollingArea {
-  height: 600px;
+.scrollingArea {
   overflow: auto;
+  height: 300px;
+  min-height: 300px;
 }
 
-table.shows tr { height: 41px;
-    border-bottom: 2px solid black;
-    border-top: 2px solid black;}
+table.shows tr {
+  height: 41px;
+  border-bottom: 2px solid black;
+  border-top: 2px solid black;
+
+}
 
 .header {
   background: black;
@@ -158,23 +157,23 @@ table.shows tr { height: 41px;
   font-size: 16px;
   font-family: arial;
  /* display: absolute;*/
-  text-align: left;
+/*  text-align: left;*/
 }
 
 .headerrow {
   max-height: 40px;
-  text-align: left;
+/*  text-align: left;*/
 }
 
-.dateheader { width: 140px; max-width: 180px; text-align: center;}
-.bandsheader { width: 355px; max-width: 500px; }
-.venueheader { width: 220px; max-width: 250px;  }
-.timeheader { width: 70px; }
-.ageheader { width: 70px; }
-.priceheader { width: 100px;}
-.notesheader { width: 160px; }
-.recheader { width: 70px; }
-.saveheader { width: 120px; text-align: center;}
+.dateheader { width: 100px; text-align: center;}
+.bandsheader { width: 200px; padding-left: 50px;}
+.venueheader { width: 90px;}
+.timeheader { width: 40px; }
+.ageheader { width: 60px; }
+.priceheader { width: 60px;}
+.notesheader { width: 100px; }
+.recheader { width: 100px; }
+.saveheader { width: 160px; text-align: center;}
 .emptyheader { width: 900px; }
 
 .date {
@@ -223,6 +222,6 @@ table.shows tr { height: 41px;
   width: 160px;
 }
 .empty {
-  width: 12px;
+  width: 0px;
 }
 

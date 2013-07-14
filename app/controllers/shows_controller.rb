@@ -2,7 +2,24 @@ class ShowsController < ApplicationController
   # GET /shows
   # GET /shows.json
   def index
-    @shows = Show.all
+
+    #   a = Show.date
+    #   Date.parse(a).strftime('%a, %b %d')
+
+    @shows = Show.find(:all, :order => "created_at")
+    # sorted = @records.sort_by &:created_at
+    # @shows_unordered = Show.all
+    # @shows = []
+
+    # @shows_unordered.each do |i|
+    #   if i.date == nil
+    #   else
+    #     a = i.date
+    #     Date.parse(a).strftime('%a, %b %d')
+    #     @shows << i
+    #   end
+    # end
+
 
     respond_to do |format|
       format.html # index.html.erb
@@ -17,6 +34,10 @@ class ShowsController < ApplicationController
       format.html # index.html.erb
       format.json { render json: @shows }
     end
+  end
+
+  def search
+
   end
 
   def saved

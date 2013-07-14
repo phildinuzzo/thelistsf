@@ -2,11 +2,9 @@
 <div class="header">
   <a href="/"><img src="smalltitle.png"></a>
 
-
 </div>
 
-   <table class="shows scrollable">
-
+   <table class="shows">
     <tbody>
       <tr class="headerrow">
         <td class="dateheader header">Date</td>
@@ -28,9 +26,9 @@
 
 
 
-<div class="scrollableContainer">
+<div>
   <div class="scrollingArea">
-   <table class="shows scrollable">
+   <table class="shows">
     <tbody>
       <% @shows.each do |show| %>
       <% a = show.date %>
@@ -96,7 +94,7 @@
                        :method => "post" %></td>
               <% else %>
               <% end %>
-            <td class="empty"></td>
+<!--             <td class="empty"></td> -->
           </tr>
         <% end %>
         <% end %>

@@ -11,4 +11,5 @@ Thelistsf::Application.routes.draw do
   match '/auth/failure' => 'sessions#failure'
   get '/saved' => 'shows#saved'
   get '/archive' => 'shows#archive'
+  get '/search' => 'shows#search'
 end
