@@ -3,6 +3,12 @@ require 'date'
 
 module ApplicationHelper
 
+	def no_year(a)
+		date = a.split(/(\w{3},\s\w{3,4}\s\d*-?\d{1,2})/)[1]
+	end
+
+
+
   def get_raw
 
 	  data = []

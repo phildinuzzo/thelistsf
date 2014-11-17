@@ -38,7 +38,7 @@
 
           <% if show.cancelled == true %>
             <tr class="cancelled">
-              <td class="date"><%= show.date %></td>
+              <td class="date"><%= no_year show.date %></td>
               <td class="bands"><%= show.bands %></td>
               <td class="venue"><%= show.venue %></td>
               <td class="time"></td>
@@ -53,7 +53,7 @@
             </tr>
           <% else %>
             <tr>
-              <td class="date"><%= show.date %></td>
+              <td class="date"><%= no_year show.date %></td>
               <td class="bands"><%= show.bands %></td>
               <td class="venue"><%= show.venue %></td>
               <td class="time"><%= show.time %></td>
