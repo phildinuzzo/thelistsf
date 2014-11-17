@@ -13,6 +13,11 @@ $(document).ready(function(){
       $(".scrollingArea").height(bodyheight);
   });
 
+
+  $('.dateheader').css('max-width', $('.date').first().width());
+  $(window).resize(function(){
+    $('.dateheader').css('max-width', $('.date').first().width());
+  });
   // console.log(bodyheight);
 
   // $('#search').on('click', 'li', searchAll);

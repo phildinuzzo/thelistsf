@@ -8,6 +8,7 @@ body {
   background-image: url("/background.png");
   background-size: 1800px;
   background-repeat: repeat-x;
+  background-position: fixed;
   height: 285px;
   min-width: 1000px;
 }
@@ -17,6 +18,7 @@ body {
   background-color: #828282;
   background-image: url("/mosh.png");
   background-repeat: repeat-x;
+  background-position: fixed;
   width: auto;
   height: 1000px;
   margin-top: -20px;
@@ -136,6 +138,7 @@ body {
   width: 100%;
   min-width: 1200px;
   max-width: 1600px;
+  table-layout: fixed;
 }
 
 table.shows tr:nth-child(odd) {background-color: #eee;}
