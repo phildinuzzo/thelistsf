@@ -36,6 +36,15 @@ class ShowsController < ApplicationController
     end
   end
 
+  def raw
+    @shows = Show.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @shows }
+    end
+  end
+
   def search
 
   end

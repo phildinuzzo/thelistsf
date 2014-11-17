@@ -1,3 +1,7 @@
+body {
+  overflow: scroll !important;
+}
+
 #topbar {
   position: relative;
   background-color: #828282;
@@ -15,6 +19,7 @@
   background-repeat: repeat-x;
   width: auto;
   height: 1000px;
+  margin-top: -20px;
 }
 
 #title {

@@ -12,4 +12,5 @@ Thelistsf::Application.routes.draw do
   get '/saved' => 'shows#saved'
   get '/archive' => 'shows#archive'
   get '/search' => 'shows#search'
+  get '/raw' => 'shows#raw'
 end

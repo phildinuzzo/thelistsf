@@ -22,6 +22,7 @@ class Extractor
     months = "jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec"
 
     raw = open("http://www.stevelist.com/list").read
+
     #remove text below shows list
     raw.split(/\*\s*recommendable/).each do |r|
       data << r
