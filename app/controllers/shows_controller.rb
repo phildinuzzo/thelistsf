@@ -146,5 +146,5 @@ class ShowsController < ApplicationController
       format.html { redirect_to shows_url }
       format.json { head :no_content }
     end
-  # end
+  end
 end

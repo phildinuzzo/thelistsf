@@ -194,7 +194,7 @@ module ApplicationHelper
     # p masterArray[-16]
     # p masterArray[-17]
     # p masterArray[-18]
-    return masterArray
+    returnArray = masterArray
   end
 
 end
