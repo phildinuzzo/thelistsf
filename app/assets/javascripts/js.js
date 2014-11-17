@@ -13,7 +13,7 @@ $(document).ready(function(){
       $(".scrollingArea").height(bodyheight);
   });
 
-  console.log(bodyheight);
+  // console.log(bodyheight);
 
   // $('#search').on('click', 'li', searchAll);
 

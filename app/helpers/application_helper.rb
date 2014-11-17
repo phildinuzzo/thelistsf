@@ -1,7 +1,7 @@
-module ApplicationHelper
-
 require 'open-uri'
 require 'date'
+
+module ApplicationHelper
 
   def get_raw
 
@@ -76,7 +76,7 @@ require 'date'
           c = a4 + b
         else
           b = Date.parse(a)
-          c = b.strftime('%a, %b %d')
+          c = b.strftime('%a, %b %d, %Y')
         end
       masterArray[i][:date] = c
       i += 1
@@ -196,6 +196,7 @@ require 'date'
     # p masterArray[-18]
     return masterArray
   end
+end
 
 
 end
