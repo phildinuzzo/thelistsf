@@ -81,7 +81,7 @@ class Extractor
           c = a4 + b
         else
           b = Date.parse(a)
-          c = b.strftime('%a, %b %d')
+          c = b.strftime('%a, %b %d, %Y')
         end
       masterArray[i][:date] = c
       i += 1
@@ -199,7 +199,6 @@ class Extractor
     # p masterArray[-16]
     # p masterArray[-17]
     # p masterArray[-18]
-    $raw_array = masterArray
 
     # Inserts complete, non-duplicate entries into Show db
     masterArray.each do |i|
