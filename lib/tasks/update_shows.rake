@@ -199,6 +199,7 @@ class Extractor
     # p masterArray[-16]
     # p masterArray[-17]
     # p masterArray[-18]
+    $raw_array = masterArray
 
     # Inserts complete, non-duplicate entries into Show db
     masterArray.each do |i|
