@@ -196,7 +196,5 @@ module ApplicationHelper
     # p masterArray[-18]
     return masterArray
   end
-end
-
 
 end
