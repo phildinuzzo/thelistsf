@@ -166,18 +166,30 @@ table.shows tr {
   font-weight: bold;
   font-family: arial;
   display: inline-block;
-  padding: 10px 5px;
+  padding: 10px 0;
  /* display: absolute;*/
 /*  text-align: left;*/
 }
 
-.headerrow {
-  max-height: 40px;
+.showheader {
+  background: black;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: arial;
+  display: inline-block;
+  padding: 10px 0;
+}
+
+.showheaderdiv {
+  display: none;
+  white-space: nowrap;
+/*  max-height: 40px;*/
 /*  text-align: left;*/
 }
 
 .dateheader { width: 10%; text-align: center;}
-.bandsheader { width: 20%; padding-left: 50px;}
+.bandsheader { width: 20%;}
 .venueheader { width: 15%;}
 .timeheader { width: 5%; }
 .ageheader { width: 5%; }
@@ -188,7 +200,7 @@ table.shows tr {
 .emptyheader { width: 10%; }
 
 .date {
-  width: 10%;
+  width: 8%;
   text-align: center;
 }
 .bands {
@@ -199,40 +211,40 @@ table.shows tr {
 }
 .time {
   text-align: center;
-  width: 5%;
+  width: 6%;
   font-size: 11px;
 }
 .ages {
-  width: 5%;
+  width: 6%;
   text-align: center;
   font-size: 12px;
 }
 .price {
-  width: 5%;
+  width: 6%;
   font-size: 11px;
   text-align: center;
 }
 .boolean {
-  width: 5%;
+  width: 7%;
   text-align: center;
   font-size: 12px;
 }
 .notes {
-  font-size: 10%;
+  font-size: 7%;
   text-align: center;
   width: 80px;
 }
 .rec {
-  width: 5%;
+  width: 7%;
   text-align: center;
   font-weight: bolder;
   font-size: 15px;
 }
 .save {
   text-align: center;
-  width: 10%;
+  width: 8%;
 }
 .empty {
-  width: 10%;
+  width: 8%;
 }
 

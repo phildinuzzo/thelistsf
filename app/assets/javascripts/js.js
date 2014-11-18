@@ -14,12 +14,24 @@ $(document).ready(function(){
   });
 
 
-  $('.dateheader').css('width', $('.date').first().width() - 10 + 'px');
+  // $('.dateheader').css('width', $('.date').first().width() + 'px');
+  // $('.showheader').show();
 
+
+  function headerSize(){
+    $('.showheader').each(function(i){
+      var width = $(".showtd[data-index=" + i + "]").width();
+      $(this).css('width', width + 'px');
+      if (i === 8) {
+        $('.showheaderdiv').show();
+      }
+    });
+  };
+
+  headerSize();
   $(window).resize(function(){
-    $('.dateheader').css('width', $('.date').first().width() - 10 + 'px');
+    headerSize();
   });
-
 
   // Background images
   $(function(){
