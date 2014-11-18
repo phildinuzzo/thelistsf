@@ -20,6 +20,27 @@ $(document).ready(function(){
   });
   // console.log(bodyheight);
 
+  // Background images
+  $(function(){
+      var bgimage = new Image();
+      bgimage.src="/mosh.png";
+
+      $(bgimage).load(function(){
+          $("#bgimage2").css("background-image","url("+$(this).attr("src")+")").fadeIn();
+      });
+  });
+
+  $(function(){
+      var bgimage = new Image();
+      bgimage.src="/background.png";
+
+      $(bgimage).load(function(){
+          $("#topbar").css("background-image","url("+$(this).attr("src")+")").fadeIn();
+      });
+  });
+
+
+
   // $('#search').on('click', 'li', searchAll);
 
   //   function searchAll(){

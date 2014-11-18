@@ -5,7 +5,7 @@ body {
 #topbar {
   position: relative;
   background-color: #828282;
-  background-image: url("/background.png");
+/*  background-image: url("/background.png");*/
   background-size: 1800px;
   background-repeat: repeat-x;
   background-position: fixed;
@@ -16,7 +16,7 @@ body {
 #bgimage2 {
   position: relative;
   background-color: #828282;
-  background-image: url("/mosh.png");
+/*  background-image: url("/mosh.png");*/
   background-repeat: repeat-x;
   background-position: fixed;
   width: auto;
