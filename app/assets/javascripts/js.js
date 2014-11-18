@@ -41,6 +41,8 @@ $(document).ready(function(){
   });
 
 
+// This doesn't want to import in application.html for some reason
+if (gon.attr) {
   console.log(gon.shows[0].sortdate);
 
   allShows = gon.shows;
@@ -57,6 +59,7 @@ $(document).ready(function(){
 
   console.log(sortedShows);
 
+}
   // $('#search').on('click', 'li', searchAll);
 
   //   function searchAll(){
