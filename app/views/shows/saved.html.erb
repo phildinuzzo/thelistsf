@@ -35,7 +35,7 @@
       <% @work = Show.where(:id => i)%>
       <% @work.each do |show| %>
         <% if show.cancelled == true %>
-          <tr class="cancelled">
+          <tr class="showtr cancelled">
             <td data-index=0 class="showtd date"><%= no_year show.date %></td>
             <td data-index=1 class="showtd bands"><%= show.bands %></td>
             <td data-index=2 class="showtd venue"><%= show.venue %></td>
@@ -48,7 +48,7 @@
             <td data-index=9 class="showtd empty"></td>
           </tr>
         <% else %>
-          <tr>
+          <tr class="showtr>
             <td data-index=0 class="showtd date"><%= no_year show.date %></td>
             <td data-index=1 class="showtd bands"><%= show.bands %></td>
             <td data-index=2 class="showtd venue"><%= show.venue %></td>

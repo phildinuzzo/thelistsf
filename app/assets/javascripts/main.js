@@ -17,7 +17,7 @@ $(document).ready(function(){
   // $('.dateheader').css('width', $('.date').first().width() + 'px');
   // $('.showheader').show();
 
-
+  // Handle header alignment...
   function headerSize(){
     $('.showheader').each(function(i){
       var width = $(".showtd[data-index=" + i + "]").width();
@@ -29,9 +29,14 @@ $(document).ready(function(){
   };
 
   headerSize();
+
   $(window).resize(function(){
     headerSize();
   });
+
+
+
+
 
   // Background images
   $(function(){
@@ -52,8 +57,38 @@ $(document).ready(function(){
       });
   });
 
+  function showSearch(e){
+      if (e === "") {
+        $('.showtr').show();
+      } else {
+        $('.showtr').each(function(){
+          var contents = $(this).children('td').text().trim();
+          console.log(contents.toString())
+          if (contents.toLowerCase().indexOf(e) > 0) {
+            console.log('CONTENTS')
+            console.log(contents)
+            console.log("E")
+            console.log(e)
+            $(this).show();
+          } else {
+            $(this).hide();
+          }
+        });
+      }
+  }
 
-// This doesn't want to import in application.html for some reason
+  $('.search').on('click', function(e){
+    var e = $(e.target).siblings('input').val().toLowerCase().trim();
+    console.log(e)
+
+    showSearch(e);
+  });
+
+
+
+
+
+// Gon gem had problems functioning in application.html
 if (gon.attr) {
   console.log(gon.shows[0].sortdate);
 
