@@ -11,24 +11,20 @@
 
 </div>
 
-   <table class="shows">
-    <tbody>
-      <tr class="headerrow">
-        <td class="dateheader header">Date</td>
-        <td class="bandsheader header">Bands</td>
-        <td class="venueheader header">Venue</td>
-        <td class="timeheader header">Time</td>
-        <td class="ageheader header">Ages</td>
-        <td class="priceheader header">Price</td>
-        <td class="notesheader header">Notes</td>
-        <td class="recheader header">Steve's Rec</td>
+   <div class="showheader">
+<!--       <tr class="headerrow"> -->
+        <div class="dateheader header">Date</div>
+        <div class="bandsheader header">Bands</div>
+        <div class="venueheader header">Venue</div>
+        <div class="timeheader header">Time</div>
+        <div class="ageheader header">Ages</div>
+        <div class="priceheader header">Price</div>
+        <div class="notesheader header">Notes</div>
+        <div class="recheader header">Steve's Rec</div>
         <% if user_signed_in? %>
-        <td class="saveheader header">Save</td>
+        <div class="saveheader header">Save</div>
         <% end %>
-      </tr>
-
-    </tbody>
-   </table>
+  </div
 
 <div>
   <div class="scrollingArea">

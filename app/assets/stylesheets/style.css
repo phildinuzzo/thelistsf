@@ -136,7 +136,7 @@ body {
   font-weight: bold;
   border-collapse: collapse;
   width: 100%;
-  min-width: 1200px;
+  min-width: 600px;
   max-width: 1600px;
   table-layout: fixed;
 }
@@ -163,7 +163,10 @@ table.shows tr {
   background: black;
   color: white;
   font-size: 16px;
+  font-weight: bold;
   font-family: arial;
+  display: inline-block;
+  padding: 10px 5px;
  /* display: absolute;*/
 /*  text-align: left;*/
 }
@@ -173,63 +176,63 @@ table.shows tr {
 /*  text-align: left;*/
 }
 
-.dateheader { width: 100px; text-align: center;}
-.bandsheader { width: 200px; padding-left: 50px;}
-.venueheader { width: 90px;}
-.timeheader { width: 40px; }
-.ageheader { width: 60px; }
-.priceheader { width: 60px;}
-.notesheader { width: 100px; }
-.recheader { width: 100px; }
-.saveheader { width: 160px; text-align: center;}
-.emptyheader { width: 900px; }
+.dateheader { width: 10%; text-align: center;}
+.bandsheader { width: 20%; padding-left: 50px;}
+.venueheader { width: 15%;}
+.timeheader { width: 5%; }
+.ageheader { width: 5%; }
+.priceheader { width: 5%;}
+.notesheader { width: 15%; }
+.recheader { width: 5%; }
+.saveheader { width: 10%; text-align: center;}
+.emptyheader { width: 10%; }
 
 .date {
-  width: 180px;
+  width: 10%;
   text-align: center;
 }
 .bands {
-  width: 500px;
+  width: 20%;
 }
 .venue {
-  width: 250px;
+  width: 15%;
 }
 .time {
   text-align: center;
-  width: 110px;
+  width: 5%;
   font-size: 11px;
 }
 .ages {
-  width: 60px;
+  width: 5%;
   text-align: center;
   font-size: 12px;
 }
 .price {
-  width: 110px;
+  width: 5%;
   font-size: 11px;
   text-align: center;
 }
 .boolean {
-  width: 60px;
+  width: 5%;
   text-align: center;
   font-size: 12px;
 }
 .notes {
-  font-size: 11px;
+  font-size: 10%;
   text-align: center;
   width: 80px;
 }
 .rec {
-  width: 100px;
+  width: 5%;
   text-align: center;
   font-weight: bolder;
   font-size: 15px;
 }
 .save {
   text-align: center;
-  width: 160px;
+  width: 10%;
 }
 .empty {
-  width: 0px;
+  width: 10%;
 }
 

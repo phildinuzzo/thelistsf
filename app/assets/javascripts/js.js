@@ -14,11 +14,12 @@ $(document).ready(function(){
   });
 
 
-  $('.dateheader').css('max-width', $('.date').first().width());
+  $('.dateheader').css('width', $('.date').first().width() - 10 + 'px');
+
   $(window).resize(function(){
-    $('.dateheader').css('max-width', $('.date').first().width());
+    $('.dateheader').css('width', $('.date').first().width() - 10 + 'px');
   });
-  // console.log(bodyheight);
+
 
   // Background images
   $(function(){
