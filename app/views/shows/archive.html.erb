@@ -4,22 +4,18 @@
 
 </div>
 
-   <table class="shows">
-    <tbody>
-      <tr class="headerrow">
-        <td class="dateheader header">Date</td>
-        <td class="bandsheader header">Bands</td>
-        <td class="venueheader header">Venue</td>
-        <td class="timeheader header">Time</td>
-        <td class="ageheader header">Ages</td>
-        <td class="priceheader header">Price</td>
-        <td class="notesheader header">Notes</td>
-        <td class="recheader header">Steve's Rec</td>
-      </tr>
 
-    </tbody>
-   </table>
-
+ <div class="showheaderdiv">
+      <div data-index=0 class="dateheader showheader">Date</div>
+      <div data-index=1 class="bandsheader showheader">Bands</div>
+      <div data-index=2 class="venueheader showheader">Venue</div>
+      <div data-index=3 class="timeheader showheader">Time</div>
+      <div data-index=4 class="ageheader showheader">Ages</div>
+      <div data-index=5 class="priceheader showheader">Price</div>
+      <div data-index=6 class="notesheader showheader">Notes</div>
+      <div data-index=7 class="booleanheader showheader"></div>
+      <div data-index=8 class="recheader showheader">Steve's Rec</div>
+</div>
 
 
 
@@ -38,29 +34,26 @@
 
         <% if show.cancelled == true %>
           <tr class="cancelled">
-            <td class="date"><%= show.date %></td>
-            <td class="bands"><%= show.bands %></td>
-            <td class="venue"><%= show.venue %></td>
-            <td class="time"></td>
-            <td></td>
-            <td class="price"></td>
-            <td class="boolean">
-            </td>
-            <td class="notes"><%= show.notes %></td>
-            <td class="rec"></td>
-            <td class="empty"></td>
-
+            <td data-index=0 class="showtd date"><%= no_year show.date %></td>
+            <td data-index=1 class="showtd bands"><%= show.bands %></td>
+            <td data-index=2 class="showtd venue"><%= show.venue %></td>
+            <td data-index=3 class="showtd time"></td>
+            <td data-index=4 class="showtd ages"></td>
+            <td data-index=5 class="showtd price"></td>
+            <td data-index=6 class="showtd boolean"></td>
+            <td data-index=7 class="showtd notes"><%= show.notes %></td>
+            <td data-index=8 class="showtd rec"></td>
+            <td data-index=9 class="showtd empty"></td>
           </tr>
         <% else %>
           <tr>
-            <td class="date"><%= show.date %></td>
-            <td class="bands"><%= show.bands %></td>
-            <td class="venue"><%= show.venue %></td>
-            <td class="time"><%= show.time %></td>
-            <td class="ages"><%= show.ages %></td>
-            <td class="price"><%= show.price %></td>
-
-            <td class="boolean">
+            <td data-index=0 class="showtd date"><%= no_year show.date %></td>
+            <td data-index=1 class="showtd bands"><%= show.bands %></td>
+            <td data-index=2 class="showtd venue"><%= show.venue %></td>
+            <td data-index=3 class="showtd time"><%= show.time %></td>
+            <td data-index=4 class="showtd ages"><%= show.ages %></td>
+            <td data-index=5 class="showtd price"><%= show.price %></td>
+            <td data-index=6 class="showtd boolean">
             <% if show.pit != false %>
               Pit warning!
             <% else %>
@@ -78,10 +71,10 @@
             <% else %>
             <% end %>
             </td>
-            <td class="notes"><%= show.notes %></td>
-            <td class="rec"><%= show.rec %></td>
+            <td data-index=7 class="showtd notes"><%= show.notes %></td>
+            <td data-index=8 class="showtd rec"><%= show.rec %></td>
 
-            <td class="empty"></td>
+            <td data-index=9 class="showtd save"></td>
           </tr>
         <% end %>
         <% end %>
@@ -96,4 +89,7 @@
     </tbody>
    </table>
  </div>
+
+
+
 </div>
