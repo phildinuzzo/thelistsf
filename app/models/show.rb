@@ -1,5 +1,5 @@
 class Show < ActiveRecord::Base
-  attr_accessible :created_at, :ages, :bands, :cancelled, :date, :inout, :notes, :pit, :price, :rec, :sellout, :soldout, :time, :venue
+  attr_accessible :created_at, :ages, :bands, :cancelled, :date, :sortdate, :inout, :notes, :pit, :price, :rec, :sellout, :soldout, :time, :venue
 
   has_many :saved_shows
   has_many :users, through: :saved_show

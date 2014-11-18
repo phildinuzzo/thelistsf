@@ -2,6 +2,7 @@ Thelistsf::Application.routes.draw do
   resources :shows
 
   post '/save_show' => 'shows#save_show'
+  get '/shows_url' => 'shows#get_shows'
 
   root :to => "home#index"
   resources :users, :only => [:index, :show, :edit, :update ]
@@ -13,4 +14,5 @@ Thelistsf::Application.routes.draw do
   get '/archive' => 'shows#archive'
   get '/search' => 'shows#search'
   get '/raw' => 'shows#raw'
+
 end

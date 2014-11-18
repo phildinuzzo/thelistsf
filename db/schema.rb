@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130614051120) do
+ActiveRecord::Schema.define(:version => 20141118033313) do
 
   create_table "saved_shows", :force => true do |t|
     t.datetime "created_at", :null => false
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20130614051120) do
     t.boolean  "cancelled"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.datetime "sortdate"
   end
 
   create_table "users", :force => true do |t|

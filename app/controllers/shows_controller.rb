@@ -1,8 +1,10 @@
+# require 'gon'
+
 class ShowsController < ApplicationController
+
   # GET /shows
   # GET /shows.json
   def index
-
     #   a = Show.date
     #   Date.parse(a).strftime('%a, %b %d')
 
@@ -10,6 +12,7 @@ class ShowsController < ApplicationController
     # sorted = @records.sort_by &:created_at
     # @shows_unordered = Show.all
     # @shows = []
+    gon.shows = Show.all
 
     # @shows_unordered.each do |i|
     #   if i.date == nil
@@ -61,6 +64,14 @@ class ShowsController < ApplicationController
       format.html # index.html.erb
       format.json { render json: @shows }
     end
+  end
+
+  def shows_url
+    respond_to do |format|
+      format.html { redirect_to shows_url }
+      format.json { head :no_content }
+    end
+
   end
 
   def save_show
@@ -147,4 +158,5 @@ class ShowsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 end

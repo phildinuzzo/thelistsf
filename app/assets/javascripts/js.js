@@ -35,11 +35,26 @@ $(document).ready(function(){
       bgimage.src="/background.png";
 
       $(bgimage).load(function(){
-          $("#topbar").css("background-image","url("+$(this).attr("src")+")").fadeIn();
+          $("#topbar").css("background-image","url("+$(this).attr("src")+")");
       });
   });
 
 
+  console.log(gon.shows[0].sortdate);
+
+  allShows = gon.shows;
+
+  function sortByKey(array, key) {
+      return array.sort(function(a, b) {
+          var x = a[key]; var y = b[key];
+          return ((x < y) ? -1 : ((x > y) ? 1 : 0));
+      });
+  }
+
+  sortedShows = sortByKey(allShows, 'sortdate');
+
+
+  console.log(sortedShows);
 
   // $('#search').on('click', 'li', searchAll);
 

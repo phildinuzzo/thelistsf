@@ -63,7 +63,7 @@ class Extractor
         :ages => nil, :price => nil, :time => nil,
         :pit => nil, :inout => nil,
         :sellout => nil, :rec => nil,
-        :soldout => nil, :notes => nil, :cancelled => nil
+        :soldout => nil, :notes => nil, :cancelled => nil, :sortdate => nil
       }
     end
 
@@ -79,13 +79,20 @@ class Extractor
           a3 = a2.strftime('%a, %b ')
           a4 = a3.to_s
           c = a4 + b
+          d = Date.parse(a3)
+
         else
           b = Date.parse(a)
           c = b.strftime('%a, %b %d, %Y')
+          d = Date.parse(c)
         end
       masterArray[i][:date] = c
+      masterArray[i][:sortdate] = d
       i += 1
     end
+
+
+
 
     showsArray.size.times do |i|
       a = showsArray[i][/(?:#{months})\s{1,2}\d{1,2}(?:\/?\d?\d?){1,4}\s+(?:#{days})?(.*?(?:(?=\sat\s)|(?=#{venuesRaw})))/, 1]
@@ -207,13 +214,14 @@ class Extractor
       elsif Show.exists?(:venue => i[:venue], :date => i[:date]) || Show.exists?(:bands => i[:bands], :date => i[:date])
         masterArray.delete_at(masterArray.index(i))
       else
-        Show.create(:date => i[:date], :venue => i[:venue], :bands => i[:bands],
+        Show.create(:date => i[:date], :sortdate => i[:sortdate], :venue => i[:venue], :bands => i[:bands],
                     :ages => i[:ages], :price => i[:price], :time => i[:time],
                     :pit => i[:pit], :inout => i[:inout], :sellout => i[:sellout],
                     :rec => i[:rec], :soldout => [:soldout], :notes => i[:notes],
                     :cancelled => i[:cancelled]
                     )
         puts "show added"
+        puts i[:sortdate]
       end
     end
 

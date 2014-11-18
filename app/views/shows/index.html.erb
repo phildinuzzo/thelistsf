@@ -1,4 +1,11 @@
 
+<%= include_gon %>
+
+<%= javascript_tag do %>
+  window.showsURL = '<%= j shows_url %>';
+  console.log(window.showsURL);
+<% end %>
+
 <div class="header">
   <a href="/"><img src="smalltitle.png"></a>
 
