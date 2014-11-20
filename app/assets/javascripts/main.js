@@ -17,10 +17,14 @@ $(document).ready(function(){
   // $('.dateheader').css('width', $('.date').first().width() + 'px');
   // $('.showheader').show();
 
+  // Remove auto outlines
+  $('.search').css('outline', 'none');
+
+
   // Handle header alignment...
   function headerSize(){
     $('.showheader').each(function(i){
-      var width = $(".showtd[data-index=" + i + "]").width();
+      var width = $(".showtd[data-index=" + i + "]:visible").width();
       $(this).css('width', width + 'px');
       if (i === 8) {
         $('.showheaderdiv').show();
@@ -57,38 +61,50 @@ $(document).ready(function(){
       });
   });
 
-  function showSearch(e){
-      if (e === "") {
+
+  // Search
+  function showSearch(term){
+      if (term === "") {
         $('.showtr').show();
       } else {
-        $('.showtr').each(function(){
+        $('.showtr').each(function(i){
           var contents = $(this).children('td').text().trim();
           console.log(contents.toString())
-          if (contents.toLowerCase().indexOf(e) > 0) {
+          if (contents.toLowerCase().indexOf(term) > 0) {
             console.log('CONTENTS')
             console.log(contents)
-            console.log("E")
-            console.log(e)
+            console.log("TERM")
+            console.log(term)
             $(this).show();
           } else {
             $(this).hide();
+            console.log(i);
+            if ($('.showtr').length === i + 1 && $('.showtr:visible').length === 0) {
+
+            }
           }
         });
       }
   }
 
-  $('.search').on('click', function(e){
-    var e = $(e.target).siblings('input').val().toLowerCase().trim();
-    console.log(e)
-
+  $('.search-btn').on('click', function(e){
+    var e = $('.search-input').val().toLowerCase().trim();
     showSearch(e);
+  });
+
+  $('.search-input').on('keyup', function(e){
+    if (e.keyCode == 13) {
+      var term = $(this).val().toLowerCase().trim();
+      showSearch(term);
+    }
   });
 
 
 
 
 
-// Gon gem had problems functioning in application.html
+// Gon gem had problems being imported in application.html
+// This if statement fixes it...
 if (gon.attr) {
   console.log(gon.shows[0].sortdate);
 
