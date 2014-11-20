@@ -278,17 +278,18 @@ table.shows tr {
   width: 80px;
 }
 .rec {
-  width: 7%;
+  width: 8%;
 /*  text-align: center;*/
+  padding-left: 15px;
   font-weight: bolder;
   font-size: 15px;
 }
 .save {
   text-align: center;
-  width: 8%;
+  width: 6%;
 }
 .empty {
-  width: 8%;
+  width: 6%;
 }
 
 
