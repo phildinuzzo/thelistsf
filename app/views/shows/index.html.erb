@@ -28,7 +28,7 @@
       <div data-index=7 class="booleanheader showheader"></div>
       <div data-index=8 class="recheader showheader">Steve's Rec</div>
       <% if user_signed_in? %>
-      <div data-index=9 class="saveheader showheader">Save</div>
+      <div data-index=9 class="saveheader showheader"></div>
       <% else %>
       <div data-index=9 class="saveheader showheader"></div>
       <% end %>
@@ -65,7 +65,11 @@
               <tr class="showtr">
                 <td data-index=0 class="showtd date"><%= no_year show.date %></td>
                 <td data-index=1 class="showtd bands"><%= show.bands %></td>
-                <td data-index=2 class="showtd venue"><%= show.venue %></td>
+                <td data-index=2 class="showtd venue">
+                  <a href="https://maps.google.com?q=<%= show.venue %>" target="_blank">
+                    <%= show.venue %>
+                  </a>
+                </td>
                 <td data-index=3 class="showtd time"><%= show.time %></td>
                 <td data-index=4 class="showtd ages"><%= show.ages %></td>
                 <td data-index=5 class="showtd price"><%= show.price %></td>
