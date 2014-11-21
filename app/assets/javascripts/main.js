@@ -32,7 +32,12 @@ $(document).ready(function(){
     });
   };
 
-  headerSize();
+
+  // $.when($('.scrollingArea').css('width', $('body').width)).done(function(){
+    $('.shows').show();
+    headerSize();
+  // });
+
 
   $(window).resize(function(){
     headerSize();

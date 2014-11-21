@@ -1,6 +1,6 @@
-body {
+/*body {
   overflow: scroll !important;
-}
+}*/
 
 #topbar {
   position: relative;
@@ -91,6 +91,12 @@ body {
   overflow: hidden;
 }
 
+.topdiv {
+  position: fixed;
+  width: 100%;
+  height: 155px;
+}
+
 #week {
   position: absolute;
   bottom: 0;
@@ -173,6 +179,7 @@ body {
 /* shows table */
 
 .shows {
+  display: none;
   font-family: arial;
   font-size: 13px;
   font-weight: bold;
@@ -190,6 +197,7 @@ table.shows tr:hover {background-color: #A393AD}
 
 .scrollingArea {
   overflow: auto;
+  width: 100%;
   height: 300px;
   min-height: 300px;
 }
@@ -227,6 +235,7 @@ table.shows tr {
 .showheaderdiv {
   display: none;
   white-space: nowrap;
+  padding-top: 155px;
 /*  max-height: 40px;*/
 /*  text-align: left;*/
 }
@@ -294,6 +303,23 @@ table.shows tr {
   width: 6%;
 }
 
+/* Filters */
+.filter-list {
+  float: right;
+}
+
+.filter-link {
+  display: inline-block;
+  color: white;
+  padding: 5px;
+  min-width: 30px;
+  height: 40px;
+
+}
+
+.filter-active {
+  font-weight: bold;
+}
 
 
 

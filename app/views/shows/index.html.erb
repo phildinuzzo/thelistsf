@@ -6,18 +6,28 @@
   console.log(window.showsURL);
 <% end %>
 
-<div class="header">
-  <a href="/"><img src="smalltitle.png"></a>
+<div class="topdiv">
+  <div class="header">
+    <a href="/"><img src="smalltitle.png"></a>
+  </div>
 
+  <div class="toolbar">
+    <input type="text" placeholder="e.g. pit, 21+, fleshies" class="search-input search"></input>
+    <button class="search-btn search">Filter shows!</button>
+<!--
+    <div class="filter-list">
+      <div class="filter-link">a/a</div>
+      <div class="filter-link">21+</div>
+      <div class="filter-link">Pit!</div>
+      <div class="filter-link">High rec</div>
+      <div class="filter-link">$10 and under</div>
+      <div class="filter-link">$20 and under</div>
+    </div> -->
 
+  </div>
 </div>
 
-<div class="toolbar">
-  <input type="text" placeholder="e.g. pit, 21+, fleshies" class="search-input search"></input>
-  <button class="search-btn search">Filter shows!</button>
-</div>
-
- <div class="showheaderdiv">
+<div class="showheaderdiv">
       <div data-index=0 class="dateheader showheader">Date</div>
       <div data-index=1 class="bandsheader showheader">Bands</div>
       <div data-index=2 class="venueheader showheader">Venue</div>
