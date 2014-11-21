@@ -62,6 +62,11 @@ $(document).ready(function(){
   });
 
 
+
+  // Filters
+  // $10 or less, $20 or less, pit, 21+, a/a, ***/****, Fris, Sats
+
+
   // Search
   function showSearch(term){
       if (term === "") {
