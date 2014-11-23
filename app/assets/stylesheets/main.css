@@ -1,0 +1,354 @@
+@import url(normalize.css);
+body {
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  background-color: black;
+  overflow: auto;
+  margin: 0; }
+
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px; }
+
+a {
+  color: #000; }
+  a:visited {
+    color: #666; }
+
+div.field, div.actions {
+  margin-bottom: 10px; }
+
+#notice {
+  color: green; }
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table; }
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0; }
+  #error_explanation h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff; }
+  #error_explanation ul li {
+    font-size: 12px;
+    list-style: square; }
+
+#topbar {
+  position: relative;
+  background-color: #828282;
+  /*  background-image: url("/background.png");*/
+  background-size: 1800px;
+  background-repeat: repeat-x;
+  background-position: fixed;
+  height: 285px;
+  min-width: 1000px; }
+
+#bgimage2 {
+  position: relative;
+  background-color: #828282;
+  /*  background-image: url("/mosh.png");*/
+  background-repeat: repeat-x;
+  background-position: fixed;
+  width: auto;
+  height: 1000px;
+  margin-top: -20px; }
+
+#title {
+  float: left;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  text-shadow: 0px 1px 6px #666; }
+
+#bigtitle {
+  margin: 41px 0 73px 1px;
+  font-size: 185px;
+  font-weight: 90;
+  color: black; }
+
+#subtitle {
+  color: white;
+  font-size: 22px;
+  font-weight: bold; }
+
+#subtitle a {
+  color: #303030;
+  text-shadow: 2px 4px 8px #666; }
+
+#subtitle p {
+  padding: 0px 0 0 0;
+  font-weight: 30;
+  text-align: right;
+  font-size: 18px; }
+
+#steve {
+  font-size: 22px;
+  margin-left: 32px; }
+
+#signin {
+  margin: 0 80px 0 0;
+  position: absolute;
+  background-color: #828282;
+  top: 0px;
+  right: 0px;
+  float: right;
+  padding: 4px;
+  border-bottom-left-radius: 20px 30px;
+  border-bottom-right-radius: 20px 30px;
+  width: 200px;
+  text-align: center;
+  opacity: 0.8;
+  font-family: arial;
+  font-size: 11px;
+  font-weight: bold;
+  border: black 1px solid;
+  border-top: none;
+  z-index: 1; }
+
+#signin a {
+  color: #3B3738;
+  font-weight: bold;
+  font-size: 14px; }
+
+/* end top bar section*/
+.topdiv {
+  position: fixed;
+  width: 100%;
+  height: 155px; }
+
+#week {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 22px;
+  padding: 5px 15px 5px 5px;
+  margin: 0 0 100px 100px; }
+
+#notes {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 5px 15px 5px 5px;
+  /*  float: right;*/ }
+
+.link {
+  text-align: center;
+  font-size: 40px;
+  color: white;
+  margin-top: 50px;
+  text-decoration: none; }
+
+.link a {
+  text-decoration: none;
+  color: white; }
+
+.toolbar {
+  height: 40px;
+  padding: 5px 15px; }
+
+.search-input {
+  height: 17px;
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 3px;
+  border: none;
+  vertical-align: bottom; }
+
+.search-btn {
+  width: 105px;
+  height: 28px;
+  background-color: black;
+  color: white;
+  box-shadow: inset 0 0 10px white;
+  border-radius: 3px;
+  border-top: 1px solid black;
+  border-bottom: none;
+  border-left: none;
+  border-right: none; }
+
+.search-btn:hover {
+  background-color: black;
+  color: white;
+  box-shadow: inset 0 0 15px white; }
+
+.search-btn:active {
+  background-color: black;
+  color: white;
+  box-shadow: inset 0 0 25px white; }
+
+.filter-list {
+  float: right; }
+
+.filter-link {
+  display: inline-block;
+  color: white;
+  padding: 5px;
+  min-width: 30px;
+  height: 40px; }
+
+.filter-active {
+  font-weight: bold; }
+
+.cancelled {
+  color: red; }
+
+/* shows table */
+.shows {
+  display: none;
+  font-family: arial;
+  font-size: 13px;
+  font-weight: bold;
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 600px;
+  /*  max-width: 1600px;*/
+  table-layout: fixed; }
+
+table.shows tr:nth-child(odd) {
+  background-color: #eee; }
+
+table.shows tr:nth-child(even) {
+  background-color: #C4B3B5; }
+
+table.shows tr:hover {
+  background-color: #A393AD; }
+
+.scrollingArea {
+  overflow: auto;
+  width: 100%;
+  height: 300px;
+  min-height: 300px; }
+
+table.shows tr {
+  height: 41px;
+  border-bottom: 2px solid black;
+  border-top: 2px solid black; }
+
+.header {
+  background: black;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: arial;
+  display: inline-block;
+  padding: 10px 0;
+  margin-top: -12px;
+  /* display: absolute;*/
+  /*  text-align: left;*/ }
+
+.showheader {
+  background: black;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: arial;
+  display: inline-block;
+  padding: 10px 0; }
+
+.showheaderdiv {
+  display: none;
+  white-space: nowrap;
+  padding-top: 155px;
+  /*  max-height: 40px;*/
+  /*  text-align: left;*/ }
+
+.dateheader {
+  width: 10%;
+  text-align: center; }
+
+.bandsheader {
+  width: 20%; }
+
+.venueheader {
+  width: 15%; }
+
+.timeheader {
+  width: 5%; }
+
+.ageheader {
+  width: 5%; }
+
+.priceheader {
+  width: 5%; }
+
+.notesheader {
+  width: 15%; }
+
+.recheader {
+  width: 5%; }
+
+.saveheader {
+  width: 10%;
+  text-align: center; }
+
+.emptyheader {
+  width: 10%; }
+
+.date {
+  width: 8%;
+  text-align: center; }
+
+.bands {
+  width: 20%;
+  padding-right: 8px; }
+
+.venue {
+  width: 15%;
+  padding-right: 8px; }
+
+.time {
+  /*  text-align: center;*/
+  width: 8%;
+  font-size: 11px; }
+
+.ages {
+  width: 4%;
+  /*  text-align: center;*/
+  font-size: 12px; }
+
+.price {
+  width: 7%;
+  font-size: 11px;
+  /*  text-align: center;*/ }
+
+.boolean {
+  width: 7%;
+  /*  text-align: center;*/
+  font-size: 12px; }
+
+.notes {
+  font-size: 7%;
+  /*  text-align: center;*/
+  width: 80px; }
+
+.rec {
+  width: 8%;
+  /*  text-align: center;*/
+  padding-left: 15px;
+  font-weight: bolder;
+  font-size: 15px; }
+
+.save {
+  text-align: center;
+  width: 6%; }
+
+.empty {
+  width: 6%; }

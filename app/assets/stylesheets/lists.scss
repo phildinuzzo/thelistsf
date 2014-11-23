@@ -1,0 +1,129 @@
+.cancelled {
+  color: red;
+}
+/* shows table */
+
+.shows {
+  display: none;
+  font-family: arial;
+  font-size: 13px;
+  font-weight: bold;
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 600px;
+/*  max-width: 1600px;*/
+  table-layout: fixed;
+}
+
+table.shows tr:nth-child(odd) {background-color: #eee;}
+table.shows tr:nth-child(even) {background-color: #C4B3B5;}
+
+table.shows tr:hover {background-color: #A393AD}
+
+.scrollingArea {
+  overflow: auto;
+  width: 100%;
+  height: 300px;
+  min-height: 300px;
+}
+
+table.shows tr {
+  height: 41px;
+  border-bottom: 2px solid black;
+  border-top: 2px solid black;
+
+}
+
+.header {
+  background: black;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: arial;
+  display: inline-block;
+  padding: 10px 0;
+  margin-top: -12px;
+ /* display: absolute;*/
+/*  text-align: left;*/
+}
+
+.showheader {
+  background: black;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: arial;
+  display: inline-block;
+  padding: 10px 0;
+}
+
+.showheaderdiv {
+  display: none;
+  white-space: nowrap;
+  padding-top: 155px;
+/*  max-height: 40px;*/
+/*  text-align: left;*/
+}
+
+.dateheader { width: 10%; text-align: center;}
+.bandsheader { width: 20%;}
+.venueheader { width: 15%;}
+.timeheader { width: 5%; }
+.ageheader { width: 5%; }
+.priceheader { width: 5%;}
+.notesheader { width: 15%; }
+.recheader { width: 5%; }
+.saveheader { width: 10%; text-align: center;}
+.emptyheader { width: 10%; }
+
+.date {
+  width: 8%;
+  text-align: center;
+}
+.bands {
+  width: 20%;
+  padding-right: 8px;
+}
+.venue {
+  width: 15%;
+  padding-right: 8px;
+}
+.time {
+/*  text-align: center;*/
+  width: 8%;
+  font-size: 11px;
+}
+.ages {
+  width: 4%;
+/*  text-align: center;*/
+  font-size: 12px;
+}
+.price {
+  width: 7%;
+  font-size: 11px;
+/*  text-align: center;*/
+}
+.boolean {
+  width: 7%;
+/*  text-align: center;*/
+  font-size: 12px;
+}
+.notes {
+  font-size: 7%;
+/*  text-align: center;*/
+  width: 80px;
+}
+.rec {
+  width: 8%;
+/*  text-align: center;*/
+  padding-left: 15px;
+  font-weight: bolder;
+  font-size: 15px;
+}
+.save {
+  text-align: center;
+  width: 6%;
+}
+.empty {
+  width: 6%;
+}
