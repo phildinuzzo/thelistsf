@@ -69,28 +69,40 @@ class Extractor
 
     #The rest of this code will slice off parts of each show string
     # and place them within pre-made hashes with masterArray
+    @now = DateTime.now
     showsArray.size.times do |i|
       a = showsArray[i][/(#{months})\s\d+(\/?\d?\d?){1,4}\s+(#{days})?/]
         if a.to_s.match(/\//)
           b = a.to_s[/\d\d?(\/\d\d?[^\/])/]
           b.gsub!(/\//, "-")
           b.gsub!(/\s/, "")
+          f = a.gsub(/(\/.*)/, "")
+          f2 = Date.parse(f)
           a2 = Date.parse(a)
           a3 = a2.strftime('%a, %b ')
           a4 = a3.to_s
           c = a4 + b
           d = Date.parse(a3)
-
+          if @now.month > d.month
+            d2 = Date.parse(f2.strftime('%a, %b %d, %Y')) + 1.year
+          else
+            d2 = Date.parse(f2.strftime('%a, %b %d, %Y'))
+          end
         else
           b = Date.parse(a)
-          c = b.strftime('%a, %b %d, %Y')
+          # if @now.month >
+          c = b.strftime('%a, %b %d')
           d = Date.parse(c)
+          if @now.month > d.month
+            d2 = Date.parse(b.strftime('%a, %b %d, %Y')) + 1.year
+          else
+            d2 = Date.parse(b.strftime('%a, %b %d, %Y'))
+          end
         end
       masterArray[i][:date] = c
-      masterArray[i][:sortdate] = d
+      masterArray[i][:sortdate] = d2
       i += 1
     end
-
 
 
 
@@ -172,7 +184,7 @@ class Extractor
     end
 
     showsArray.size.times do |i|
-      a = showsArray[i][/(?:\*+\s.*)(\(.*sold out.*\))/, 1]
+      a = showsArray[i][/(?:\*+\s.*)(\(sold out\))/, 1]
       if a == nil
         b = false
       else
@@ -217,11 +229,13 @@ class Extractor
         Show.create(:date => i[:date], :sortdate => i[:sortdate], :venue => i[:venue], :bands => i[:bands],
                     :ages => i[:ages], :price => i[:price], :time => i[:time],
                     :pit => i[:pit], :inout => i[:inout], :sellout => i[:sellout],
-                    :rec => i[:rec], :soldout => [:soldout], :notes => i[:notes],
+                    :rec => i[:rec], :soldout => i[:soldout], :notes => i[:notes],
                     :cancelled => i[:cancelled]
                     )
         puts "show added"
         puts i[:sortdate]
+        puts i[:soldout]
+
       end
     end
 

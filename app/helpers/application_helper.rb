@@ -10,8 +10,9 @@ module ApplicationHelper
 
 
   def get_raw
-
-	  data = []
+    # attr_accessor :date, :bands, :venue, :ages, :price, :time, :pit, :inout,
+    #                 :sellout, :rec, :soldout, :notes, :cancelled
+    data = []
     data2 =[]
     shows = []
     showsArray = [[]]
@@ -64,29 +65,48 @@ module ApplicationHelper
         :ages => nil, :price => nil, :time => nil,
         :pit => nil, :inout => nil,
         :sellout => nil, :rec => nil,
-        :soldout => nil, :notes => nil, :cancelled => nil
+        :soldout => nil, :notes => nil, :cancelled => nil, :sortdate => nil
       }
     end
 
     #The rest of this code will slice off parts of each show string
     # and place them within pre-made hashes with masterArray
+    @now = DateTime.now
     showsArray.size.times do |i|
       a = showsArray[i][/(#{months})\s\d+(\/?\d?\d?){1,4}\s+(#{days})?/]
         if a.to_s.match(/\//)
           b = a.to_s[/\d\d?(\/\d\d?[^\/])/]
           b.gsub!(/\//, "-")
           b.gsub!(/\s/, "")
+          f = a.gsub(/(\/.*)/, "")
+          f2 = Date.parse(f)
           a2 = Date.parse(a)
           a3 = a2.strftime('%a, %b ')
           a4 = a3.to_s
           c = a4 + b
+          d = Date.parse(a3)
+          if @now.month > d.month
+            d2 = Date.parse(f2.strftime('%a, %b %d, %Y')) + 1.year
+          else
+            d2 = Date.parse(f2.strftime('%a, %b %d, %Y'))
+          end
         else
           b = Date.parse(a)
-          c = b.strftime('%a, %b %d, %Y')
+          # if @now.month >
+          c = b.strftime('%a, %b %d')
+          d = Date.parse(c)
+          if @now.month > d.month
+            d2 = Date.parse(b.strftime('%a, %b %d, %Y')) + 1.year
+          else
+            d2 = Date.parse(b.strftime('%a, %b %d, %Y'))
+          end
         end
       masterArray[i][:date] = c
+      masterArray[i][:sortdate] = d2
       i += 1
     end
+
+
 
     showsArray.size.times do |i|
       a = showsArray[i][/(?:#{months})\s{1,2}\d{1,2}(?:\/?\d?\d?){1,4}\s+(?:#{days})?(.*?(?:(?=\sat\s)|(?=#{venuesRaw})))/, 1]
@@ -166,7 +186,7 @@ module ApplicationHelper
     end
 
     showsArray.size.times do |i|
-      a = showsArray[i][/(?:\*+\s.*)(\(.*sold out.*\))/, 1]
+      a = showsArray[i][/(?:\*+\s.*)(\(sold out\))/, 1]
       if a == nil
         b = false
       else
@@ -192,7 +212,6 @@ module ApplicationHelper
       masterArray[i][:cancelled] = b
       i += 1
     end
-
 
     # masterArray.each do |i|
     #  p i[:venue]

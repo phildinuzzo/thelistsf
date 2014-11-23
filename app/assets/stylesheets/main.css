@@ -5,7 +5,7 @@ body {
   font-size: 13px;
   line-height: 18px;
   background-color: black;
-  overflow: auto;
+  overflow: hidden;
   margin: 0; }
 
 p, ol, ul, td {
@@ -20,6 +20,12 @@ a {
 
 div.field, div.actions {
   margin-bottom: 10px; }
+
+.clearfix:after {
+  content: " ";
+  display: block;
+  height: 0;
+  clear: both; }
 
 #notice {
   color: green; }
@@ -161,7 +167,7 @@ div.field, div.actions {
   color: white; }
 
 .toolbar {
-  height: 40px;
+  height: 50px;
   padding: 5px 15px; }
 
 .search-input {
@@ -194,15 +200,26 @@ div.field, div.actions {
   color: white;
   box-shadow: inset 0 0 25px white; }
 
+.search-clear {
+  display: none;
+  font-size: 10px;
+  color: white;
+  margin: 0 0 0 5px;
+  cursor: pointer; }
+
 .filter-list {
-  float: right; }
+  float: right;
+  height: 50px; }
 
 .filter-link {
   display: inline-block;
   color: white;
   padding: 5px;
-  min-width: 30px;
-  height: 40px; }
+  min-width: 40px;
+  max-width: 75px;
+  height: 40px;
+  text-align: center;
+  vertical-align: top; }
 
 .filter-active {
   font-weight: bold; }
@@ -333,6 +350,8 @@ table.shows tr {
   width: 7%;
   /*  text-align: center;*/
   font-size: 12px; }
+  .boolean p {
+    margin: 3px 0; }
 
 .notes {
   font-size: 7%;

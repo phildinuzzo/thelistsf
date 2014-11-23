@@ -8,7 +8,8 @@ class ShowsController < ApplicationController
     #   a = Show.date
     #   Date.parse(a).strftime('%a, %b %d')
 
-    @shows = Show.find(:all, :order => "created_at")
+    # @shows = Show.find(:all, :order => "created_at")
+    @shows = Show.all
     # sorted = @records.sort_by &:created_at
     # @shows_unordered = Show.all
     # @shows = []

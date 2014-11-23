@@ -6,14 +6,15 @@
   console.log(window.showsURL);
 <% end %>
 
-<div class="topdiv">
+<div class="topdiv clearfix">
   <div class="header">
     <a href="/"><img src="smalltitle.png"></a>
   </div>
 
-  <div class="toolbar">
+  <div class="toolbar clearfix">
     <input type="text" placeholder="e.g. pit, 21+, fleshies" class="search-input search"></input>
-    <button class="search-btn search">Filter shows!</button>
+    <button class="search-btn search">Search shows</button>
+    <span class="search-clear">Clear</span>
 
     <div class="filter-list">
       <div class="filter-link">a/a</div>
@@ -28,7 +29,7 @@
   </div>
 </div>
 
-<div class="showheaderdiv">
+<div class="showheaderdiv clearfix">
       <div data-index=0 class="dateheader showheader">Date</div>
       <div data-index=1 class="bandsheader showheader">Bands</div>
       <div data-index=2 class="venueheader showheader">Venue</div>
@@ -50,77 +51,73 @@
    <table class="shows">
     <tbody>
       <% @shows.each do |show| %>
-        <% a = show.date %>
+        <% a = show.sortdate %>
         <% if a == nil %>
         <% else %>
-        <% b = Date.parse(a).strftime('%a, %b %d') %>
-        <% c = Date.parse(b) %>
-          <% if c < Date.today %>
-          <% else %>
 
-            <% if show.cancelled == true %>
-              <tr class="showtr cancelled">
-                <td data-index=0 class="showtd date"><%= no_year show.date %></td>
-                <td data-index=1 class="showtd bands"><%= show.bands %></td>
-                <td data-index=2 class="showtd venue"><%= show.venue %></td>
-                <td data-index=3 class="showtd time"></td>
-                <td data-index=4 class="showtd ages"></td>
-                <td data-index=5 class="showtd price"></td>
-                <td data-index=6 class="showtd boolean"></td>
-                <td data-index=7 class="showtd notes"><%= show.notes %></td>
-                <td data-index=8 class="showtd rec"></td>
-                <td data-index=9 class="showtd empty"></td>
-
-              </tr>
+          <% c = Date.parse(a.to_s) %>
+            <% if c < Date.today %>
             <% else %>
-              <tr class="showtr">
-                <td data-index=0 class="showtd date"><%= no_year show.date %></td>
-                <td data-index=1 class="showtd bands"><%= show.bands %></td>
-                <td data-index=2 class="showtd venue">
-                  <a href="https://maps.google.com?q=<%= show.venue %>" target="_blank">
-                    <%= show.venue %>
-                  </a>
-                </td>
-                <td data-index=3 class="showtd time"><%= show.time %></td>
-                <td data-index=4 class="showtd ages"><%= show.ages %></td>
-                <td data-index=5 class="showtd price"><%= show.price %></td>
-                <td data-index=6 class="showtd boolean">
-                <% if show.pit != false %>
-                  Pit warning!
-                <% else %>
-                <% end %>
-                <% if show.inout != false %>
-                  No in/out!
-                <% else %>
-                <% end %>
-                <% if show.sellout != false %>
-                  Likely sell-out!
-                <% else %>
-                <% end %>
-                <% if show.soldout != false %>
-                  SOLDOUT!
-                <% else %>
-                <% end %>
-                </td>
-                <td data-index=7 class="showtd notes"><%= show.notes %></td>
-                <td data-index=8 class="showtd rec"><%= show.rec %></td>
 
-                <td data-index=9 class="showtd save">
-                <% if user_signed_in? %>
+              <% if show.cancelled == true %>
+                <tr class="showtr cancelled">
+                  <td data-index=0 class="showtd date"><%= no_year show.date %></td>
+                  <td data-index=1 class="showtd bands"><%= show.bands %></td>
+                  <td data-index=2 class="showtd venue"><%= show.venue %></td>
+                  <td data-index=3 class="showtd time"></td>
+                  <td data-index=4 class="showtd ages"></td>
+                  <td data-index=5 class="showtd price"></td>
+                  <td data-index=6 class="showtd boolean"></td>
+                  <td data-index=7 class="showtd notes"><%= show.notes %></td>
+                  <td data-index=8 class="showtd rec"></td>
+                  <td data-index=9 class="showtd empty"></td>
 
-                <%= link_to 'Save', {:controller => "shows",
-                         :action => "save_show",
-                         :user_id => current_user.id,
-                         :show_id => show.id},
-                         :method => "post" %>
-                </td>
-                <% else %>
-                <% end %>
-  <!--             <td class="empty"></td> -->
-            </tr>
+                </tr>
+              <% else %>
+                <tr class="showtr">
+                  <td data-index=0 class="showtd date"><%= no_year show.date %></td>
+                  <td data-index=1 class="showtd bands"><%= show.bands %></td>
+                  <td data-index=2 class="showtd venue">
+                    <a href="https://maps.google.com?q=<%= show.venue %>" target="_blank">
+                      <%= show.venue %>
+                    </a>
+                  </td>
+                  <td data-index=3 class="showtd time"><%= show.time %></td>
+                  <td data-index=4 class="showtd ages"><%= show.ages %></td>
+                  <td data-index=5 class="showtd price"><%= show.price %></td>
+                  <td data-index=6 class="showtd boolean">
+                  <% if show.soldout != false %>
+                    <p>SOLDOUT!</p>
+                  <% end %>
+                  <% if show.pit != false %>
+                    <p>Pit warning!</p>
+                  <% end %>
+                  <% if show.inout != false %>
+                    <p>No in/out!</p>
+                  <% end %>
+                  <% if show.sellout != false %>
+<!--                     Likely sell-out! -->
+                  <% end %>
+
+                  </td>
+                  <td data-index=7 class="showtd notes"><%= show.notes %></td>
+                  <td data-index=8 class="showtd rec"><%= show.rec %></td>
+
+                  <td data-index=9 class="showtd save">
+                  <% if user_signed_in? %>
+
+                  <%= link_to 'Save', {:controller => "shows",
+                           :action => "save_show",
+                           :user_id => current_user.id,
+                           :show_id => show.id},
+                           :method => "post" %>
+                  </td>
+                  <% end %>
+    <!--             <td class="empty"></td> -->
+              </tr>
+            <% end %>
           <% end %>
         <% end %>
-      <% end %>
 
       <% end %>
     </tbody>

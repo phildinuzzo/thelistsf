@@ -13,13 +13,8 @@ $(document).ready(function(){
       $(".scrollingArea").height(bodyheight);
   });
 
-
-  // $('.dateheader').css('width', $('.date').first().width() + 'px');
-  // $('.showheader').show();
-
   // Remove auto outlines
   $('.search').css('outline', 'none');
-
 
   // Handle header alignment...
   function headerSize(){
@@ -27,25 +22,21 @@ $(document).ready(function(){
       var width = $(".showtd[data-index=" + i + "]:visible").width();
       $(this).css('width', width + 'px');
       if (i === 8) {
-        $('.showheaderdiv').show();
+        $('.showheaderdiv').show()
       }
     });
   };
 
+  setInterval(function(){
+    $('.showheaderdiv').show();
+  }, 200);
 
-  // $.when($('.scrollingArea').css('width', $('body').width)).done(function(){
-    $('.shows').show();
-    headerSize();
-  // });
-
+  $('.shows').show();
+  headerSize();
 
   $(window).resize(function(){
     headerSize();
   });
-
-
-
-
 
   // Background images
   $(function(){
@@ -66,35 +57,33 @@ $(document).ready(function(){
       });
   });
 
-
-
   // Filters
-  // $10 or less, $20 or less, pit, 21+, a/a, ***/****, Fris, Sats
+
+
 
 
   // Search
   function showSearch(term){
-      if (term === "") {
-        $('.showtr').show();
-      } else {
-        $('.showtr').each(function(i){
-          var contents = $(this).children('td').text().trim();
-          console.log(contents.toString())
-          if (contents.toLowerCase().indexOf(term) > 0) {
-            console.log('CONTENTS')
-            console.log(contents)
-            console.log("TERM")
-            console.log(term)
-            $(this).show();
-          } else {
-            $(this).hide();
-            console.log(i);
-            if ($('.showtr').length === i + 1 && $('.showtr:visible').length === 0) {
-
-            }
+    if (term === "") {
+      $('.showtr').show();
+      $('.search-clear').hide();
+    } else {
+      $('.search-clear').show();
+      $('.showtr').each(function(i){
+        var contents = $(this).children('td').text().trim();
+        if (contents.toLowerCase().indexOf(term) > 0) {
+          $(this).show();
+        } else {
+          $(this).hide();
+          if ($('.showtr').length === i + 1 && $('.showtr:visible').length === 0) {
+            // Stuff to do when No Results
           }
-        });
-      }
+        }
+        if ($('.showtr').length === i + 1) {
+          // Stuff to do when Done
+        }
+      });
+    }
   }
 
   $('.search-btn').on('click', function(e){
@@ -109,12 +98,14 @@ $(document).ready(function(){
     }
   });
 
-
-
-
+  $('.search-clear').on('click', function(){
+    term = '';
+    showSearch(term);
+    $('.search-input').val('');
+  });
 
 // Gon gem had problems being imported in application.html
-// This if statement fixes it...
+// This IF statement fixes it...
 if (gon.attr) {
   console.log(gon.shows[0].sortdate);
 
@@ -133,6 +124,14 @@ if (gon.attr) {
   console.log(sortedShows);
 
 }
+
+
+
+
+
+
+
+
   // $('#search').on('click', 'li', searchAll);
 
   //   function searchAll(){

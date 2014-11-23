@@ -4,10 +4,11 @@ body {
   font-size: 13px;
   line-height: 18px;
   background-color: black;
-  overflow: auto;
+
+  overflow: hidden;
+
   margin: 0;
 }
-
 
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
@@ -30,6 +31,13 @@ div {
   &.field, &.actions {
     margin-bottom: 10px;
   }
+}
+
+.clearfix:after {
+   content: " ";
+   display: block;
+   height: 0;
+   clear: both;
 }
 
 #notice {
