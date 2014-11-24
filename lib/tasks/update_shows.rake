@@ -73,17 +73,28 @@ class Extractor
     showsArray.size.times do |i|
       a = showsArray[i][/(#{months})\s\d+(\/?\d?\d?){1,4}\s+(#{days})?/]
         if a.to_s.match(/\//)
+          # Finds date ranges with /
           b = a.to_s[/\d\d?(\/\d\d?[^\/])/]
+          # Replace / with -
           b.gsub!(/\//, "-")
+          # ...and get rid of blank space
           b.gsub!(/\s/, "")
+          # Remove days past the first and save as f
           f = a.gsub(/(\/.*)/, "")
           f2 = Date.parse(f)
-          a2 = Date.parse(a)
-          a3 = a2.strftime('%a, %b ')
-          a4 = a3.to_s
-          c = a4 + b
-          d = Date.parse(a3)
-          if @now.month > d.month
+
+          f3 = f2.strftime('%a, %b ').to_s
+          c = f3 + b
+
+          d = f2.strftime('%a, %b %d')
+          e = Date.parse(d)
+          # a2 = Date.parse(a)
+          # a3 = a2.strftime('%a, %b ')
+          # a4 = a3.to_s
+          # a5 = a4 + b
+          # d = Date.parse(a3)
+
+          if @now.month > e.month
             d2 = Date.parse(f2.strftime('%a, %b %d, %Y')) + 1.year
           else
             d2 = Date.parse(f2.strftime('%a, %b %d, %Y'))
@@ -102,7 +113,6 @@ class Extractor
       masterArray[i][:sortdate] = d2
       i += 1
     end
-
 
 
     showsArray.size.times do |i|
