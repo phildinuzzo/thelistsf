@@ -30,7 +30,7 @@
 </div>
 
 <div class="showheaderdiv clearfix">
-      <div data-index=0 class="dateheader showheader wodry">Date</div>
+      <div data-index=0 class="dateheader showheader">Date</div>
       <div data-index=1 class="bandsheader showheader">Bands</div>
       <div data-index=2 class="venueheader showheader">Venue</div>
       <div data-index=3 class="timeheader showheader">Time</div>
@@ -56,7 +56,7 @@
         <% else %>
 
           <% c = Date.parse(a.to_s) %>
-            <% if c < Date.today %>
+            <% if c < Date.today - 1.day %>
             <% else %>
 
               <% if show.cancelled == true %>
