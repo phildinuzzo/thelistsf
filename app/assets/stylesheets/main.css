@@ -278,14 +278,18 @@ table.shows tr {
   font-weight: bold;
   font-family: arial;
   display: inline-block;
-  padding: 10px 0; }
+  padding: 10px 0;
+  cursor: pointer; }
+  .showheader:hover {
+    transform: scaleY(-1); }
 
 .showheaderdiv {
   display: none;
   white-space: nowrap;
   padding-top: 155px;
   /*  max-height: 40px;*/
-  /*  text-align: left;*/ }
+  /*  text-align: left;*/
+  margin-bottom: 3px; }
 
 .dateheader {
   width: 10%;

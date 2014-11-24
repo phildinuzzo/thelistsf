@@ -55,6 +55,11 @@ table.shows tr {
   font-family: arial;
   display: inline-block;
   padding: 10px 0;
+  cursor: pointer;
+  &:hover {
+    transform: scaleY(-1);
+  }
+
 }
 
 .showheaderdiv {
@@ -63,6 +68,9 @@ table.shows tr {
   padding-top: 155px;
 /*  max-height: 40px;*/
 /*  text-align: left;*/
+  margin-bottom: 3px;
+  // -webkit-box-shadow: 0 8px 5px -6px #888;
+  // box-shadow: 0 8px 5px -6px #888;
 }
 
 .dateheader { width: 10%; text-align: center;}

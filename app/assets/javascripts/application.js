@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require wodry.js
 //= require_tree .
 //= require main
 

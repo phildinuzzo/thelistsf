@@ -60,8 +60,6 @@ $(document).ready(function(){
   // Filters
 
 
-
-
   // Search
   function showSearch(term){
     if (term === "") {

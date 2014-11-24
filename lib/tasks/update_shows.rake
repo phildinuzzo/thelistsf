@@ -90,8 +90,7 @@ class Extractor
           end
         else
           b = Date.parse(a)
-          # if @now.month >
-          c = b.strftime('%a, %b %d')
+          c = b.strftime('%a, %b %-d')
           d = Date.parse(c)
           if @now.month > d.month
             d2 = Date.parse(b.strftime('%a, %b %d, %Y')) + 1.year
