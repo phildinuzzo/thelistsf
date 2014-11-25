@@ -30,15 +30,15 @@
 </div>
 
 <div class="showheaderdiv clearfix">
-      <div data-index=0 class="dateheader showheader">Date</div>
-      <div data-index=1 class="bandsheader showheader">Bands</div>
-      <div data-index=2 class="venueheader showheader">Venue</div>
-      <div data-index=3 class="timeheader showheader">Time</div>
-      <div data-index=4 class="ageheader showheader">Ages</div>
-      <div data-index=5 class="priceheader showheader">Price</div>
-      <div data-index=6 class="notesheader showheader">Notes</div>
-      <div data-index=7 class="booleanheader showheader"></div>
-      <div data-index=8 class="recheader showheader">Steve's Rec</div>
+      <div data-index=0 onclick="javascript:showSort(0)" class="dateheader showheader">Date</div>
+      <div data-index=1 onclick="javascript:showSort(1)" class="bandsheader showheader">Bands</div>
+      <div data-index=2 onclick="javascript:showSort(2)" class="venueheader showheader">Venue</div>
+      <div data-index=3 onclick="javascript:showSort(3)" class="timeheader showheader">Time</div>
+      <div data-index=4 onclick="javascript:showSort(4)" class="ageheader showheader">Ages</div>
+      <div data-index=5 onclick="javascript:showSort(5)" class="priceheader showheader">Price</div>
+      <div data-index=6 onclick="javascript:showSort(6)" class="notesheader showheader">Notes</div>
+      <div data-index=7 onclick="javascript:showSort(7)" class="booleanheader showheader"></div>
+      <div data-index=8 onclick="javascript:showSort(8)" class="recheader showheader">Steve's Rec</div>
       <% if user_signed_in? %>
       <div data-index=9 class="saveheader showheader"></div>
       <% else %>
@@ -61,46 +61,62 @@
 
               <% if show.cancelled == true %>
                 <tr class="showtr cancelled">
-                  <td data-index=0 class="showtd date"><%= no_year show.date %></td>
-                  <td data-index=1 class="showtd bands"><%= show.bands %></td>
-                  <td data-index=2 class="showtd venue"><%= show.venue %></td>
-                  <td data-index=3 class="showtd time"></td>
-                  <td data-index=4 class="showtd ages"></td>
-                  <td data-index=5 class="showtd price"></td>
-                  <td data-index=6 class="showtd boolean"></td>
-                  <td data-index=7 class="showtd notes"><%= show.notes %></td>
-                  <td data-index=8 class="showtd rec"></td>
-                  <td data-index=9 class="showtd empty"></td>
+                  <td data-index=0 data-attr="<%= show.sortdate %>" "class=showtd date">
+                    <%= no_year show.date %>
+                  </td>
+                  <td data-index=1 data-attr="<%= show.bands %>" class="showtd bands">
+                    <%= show.bands %>
+                  </td>
+                  <td data-index=2 data-attr="<%= show.venue %>" class="showtd venue">
+                    <%= show.venue %>
+                  </td>
+                  <td data-index=3 data-attr="0" class="showtd time"></td>
+                  <td data-index=4 data-attr="0" class="showtd ages"></td>
+                  <td data-index=5 data-attr="0" class="showtd price"></td>
+                  <td data-index=6 data-attr="0" class="showtd boolean"></td>
+                  <td data-index=7 data-attr="0" class="showtd notes"><%= show.notes %></td>
+                  <td data-index=8 data-attr="0" class="showtd rec"></td>
+                  <td data-index=9 data-attr="0" class="showtd empty"></td>
 
                 </tr>
               <% else %>
                 <tr class="showtr">
-                  <td data-index=0 class="showtd date"><%= no_year show.date %></td>
-                  <td data-index=1 class="showtd bands"><%= show.bands %></td>
-                  <td data-index=2 class="showtd venue">
+                  <td data-index=0 data-attr="<%= show.sortdate %>" class="showtd date">
+                    <%= no_year show.date %>
+                  </td>
+                  <td data-index=1 data-attr="<%= show.bands %>" class="showtd bands">
+                    <%= show.bands %>
+                  </td>
+                  <td data-index=2 data-attr="<%= show.venue %>" class="showtd venue">
                     <a href="https://maps.google.com?q=<%= show.venue %>" target="_blank">
                       <%= show.venue %>
                     </a>
                   </td>
-                  <td data-index=3 class="showtd time"><%= show.time %></td>
-                  <td data-index=4 class="showtd ages"><%= show.ages %></td>
-                  <td data-index=5 class="showtd price"><%= show.price %></td>
-                  <td data-index=6 class="showtd boolean">
-                  <% if show.soldout != false %>
-                    <p>SOLDOUT!</p>
-                  <% end %>
-                  <% if show.pit != false %>
-                    <p>Pit warning!</p>
-                  <% end %>
-                  <% if show.inout != false %>
-                    <p>No in/out!</p>
-                  <% end %>
-                  <% if show.sellout != false %>
-<!--                     Likely sell-out! -->
-                  <% end %>
+                  <td data-index=3 data-attr="<%= show.time %>" class="showtd time">
+                    <%= show.time %>
                   </td>
-                  <td data-index=7 class="showtd notes"><%= show.notes %></td>
-                  <td data-index=8 class="showtd rec"><%= show.rec %></td>
+                  <td data-index=4 data-attr="<%= show.ages %>" class="showtd ages">
+                    <%= show.ages %>
+                  </td>
+                  <td data-index=5 data-attr="<%= show.price %>" class="showtd price">
+                    <%= show.price %>
+                  </td>
+                  <td data-index=6 data-attr="<%= show.soldout %><%= show.pit %><%= show.inout %>" class="showtd boolean">
+                    <% if show.soldout != false %>
+                      <p>SOLDOUT!</p>
+                    <% end %>
+                    <% if show.pit != false %>
+                      <p>Pit warning!</p>
+                    <% end %>
+                    <% if show.inout != false %>
+                      <p>No in/out!</p>
+                    <% end %>
+                    <% if show.sellout != false %>
+  <!--                     Likely sell-out! -->
+                    <% end %>
+                  </td>
+                  <td data-index=7 data-attr="<%= show.notes %>" class="showtd notes"><%= show.notes %></td>
+                  <td data-index=8 data-attr="<%= show.rec %>" class="showtd rec"><%= show.rec %></td>
 
                   <td data-index=9 class="showtd save">
                   <% if user_signed_in? %>

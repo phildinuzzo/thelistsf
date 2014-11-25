@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require wodry.js
+//= require tinysort.js
 //= require_tree .
 //= require main
 

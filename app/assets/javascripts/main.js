@@ -60,6 +60,15 @@ $(document).ready(function(){
   // Filters
 
 
+  // Sorting
+  var aAsc = [];
+  showSort = function(nr) {
+    console.log('show-sort');
+    aAsc[nr] = aAsc[nr]=='asc'?'desc':'asc';
+    $('.shows>tbody>tr').tsort('td:eq('+nr+')',{order:aAsc[nr], data:'attr'});
+  };
+
+
   // Search
   function showSearch(term){
     if (term === "") {
