@@ -188,7 +188,8 @@ div.field, div.actions {
   border-top: 1px solid black;
   border-bottom: none;
   border-left: none;
-  border-right: none; }
+  border-right: none;
+  cursor: pointer; }
 
 .search-btn:hover {
   background-color: black;
