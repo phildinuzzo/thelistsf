@@ -137,8 +137,6 @@ if (gon.attr) {
 
 
 
-
-
   // $('#search').on('click', 'li', searchAll);
 
   //   function searchAll(){

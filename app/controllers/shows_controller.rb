@@ -40,6 +40,7 @@ class ShowsController < ApplicationController
     end
   end
 
+
   def raw
     @shows = Show.all
 
