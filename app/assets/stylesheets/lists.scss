@@ -1,3 +1,7 @@
+.list-container {
+  overflow: hidden;
+}
+
 .cancelled {
   color: red;
 }
@@ -47,7 +51,9 @@ table.shows tr {
 /*  text-align: left;*/
 }
 
+
 .showheader {
+  position: relative;
   background: black;
   color: white;
   font-size: 16px;
@@ -55,11 +61,13 @@ table.shows tr {
   font-family: arial;
   display: inline-block;
   padding: 10px 0;
-  cursor: pointer;
   &:hover {
     // transform: scaleY(-1);
   }
+}
 
+.pointer {
+  cursor: pointer;
 }
 
 .showheaderdiv {
@@ -80,7 +88,7 @@ table.shows tr {
 .ageheader { width: 5%; }
 .priceheader { width: 5%;}
 .notesheader { width: 15%; }
-.recheader { width: 5%; }
+.recheader { width: 5%; z-index: 2;}
 .saveheader { width: 10%; text-align: center;}
 .emptyheader { width: 10%; }
 

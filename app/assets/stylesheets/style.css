@@ -167,3 +167,23 @@
 
 .filter-active {
   font-weight: bold; }
+
+.arrow {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 16px;
+  left: -15px; }
+
+.date-arrow {
+  top: 6px; }
+
+.arrow-up {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #ffffff; }
+
+.arrow-down {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #ffffff; }

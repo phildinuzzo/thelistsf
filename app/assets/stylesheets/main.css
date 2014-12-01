@@ -5,7 +5,6 @@ body {
   font-size: 13px;
   line-height: 18px;
   background-color: black;
-  overflow: hidden;
   margin: 0; }
 
 p, ol, ul, td {
@@ -225,6 +224,29 @@ div.field, div.actions {
 .filter-active {
   font-weight: bold; }
 
+.arrow {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 16px;
+  left: -15px; }
+
+.date-arrow {
+  top: 6px; }
+
+.arrow-up {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #ffffff; }
+
+.arrow-down {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #ffffff; }
+
+.list-container {
+  overflow: hidden; }
+
 .cancelled {
   color: red; }
 
@@ -273,13 +295,16 @@ table.shows tr {
   /*  text-align: left;*/ }
 
 .showheader {
+  position: relative;
   background: black;
   color: white;
   font-size: 16px;
   font-weight: bold;
   font-family: arial;
   display: inline-block;
-  padding: 10px 0;
+  padding: 10px 0; }
+
+.pointer {
   cursor: pointer; }
 
 .showheaderdiv {
@@ -313,7 +338,8 @@ table.shows tr {
   width: 15%; }
 
 .recheader {
-  width: 5%; }
+  width: 5%;
+  z-index: 2; }
 
 .saveheader {
   width: 10%;
