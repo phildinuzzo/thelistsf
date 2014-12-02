@@ -7,7 +7,27 @@ module ApplicationHelper
 		date = a.split(/(\w{3},\s\w{3,4}\s\d*-?\d{1,2})/)[1]
 	end
 
+  def price_data(a)
+    if a == nil
+      9999
+    elsif a == 'free'
+      a
+    else
+      b = a.gsub(/(-|\/).*/, '').gsub(/\$/, '')
+    end
+  end
 
+  def age_data(a)
+    if a == nil
+      9999
+    elsif a == 'a/a'
+      0
+    else
+      a.gsub(/\+/, '').to_i
+    end
+
+
+  end
 
   def get_raw
     # attr_accessor :date, :bands, :venue, :ages, :price, :time, :pit, :inout,

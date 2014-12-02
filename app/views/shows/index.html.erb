@@ -16,15 +16,45 @@
       <button class="search-btn search">Search shows</button>
       <span class="search-clear">Clear</span>
 
-  <!--     <div class="filter-list">
-        <div class="filter-link">a/a</div>
-        <div class="filter-link">21+</div>
-        <div class="filter-link">Pit!</div>
-        <div class="filter-link">High rec</div>
-        <div class="filter-link">$10 and under</div>
-        <div class="filter-link">$20 and under</div>
-        <div class="filter-link">Cancelled</div>
-      </div> -->
+
+
+      <div class="filter-list">
+        <div class="filter-link">
+          <input type="checkbox" id="checkbox-1" class="custom-checkbox">
+          <label class="custom-label-checkbox" for="checkbox-1"></label>
+          a/a
+        </div>
+        <div class="filter-link">
+          <input type="checkbox" id="checkbox-2" class="custom-checkbox">
+          <label class="custom-label-checkbox" for="checkbox-2"></label>
+          21+
+        </div>
+        <div class="filter-link">
+          <input type="checkbox" id="checkbox-3" class="custom-checkbox">
+          <label class="custom-label-checkbox" for="checkbox-3"></label>
+          Pit!
+        </div>
+        <div class="filter-link">
+          <input type="checkbox" id="checkbox-4" class="custom-checkbox">
+          <label class="custom-label-checkbox" for="checkbox-4"></label>
+          High rec
+        </div>
+        <div class="filter-link">
+          <input type="checkbox" id="checkbox-5" class="custom-checkbox">
+          <label class="custom-label-checkbox" for="checkbox-5"></label>
+          $10 or less
+        </div>
+        <div class="filter-link">
+          <input type="checkbox" id="checkbox-6" class="custom-checkbox">
+          <label class="custom-label-checkbox" for="checkbox-6"></label>
+          $20 or less
+        </div>
+        <div class="filter-link">
+          <input type="checkbox" id="checkbox-7" class="custom-checkbox">
+          <label class="custom-label-checkbox" for="checkbox-7"></label>
+          Cancelled
+        </div>
+      </div>
 
     </div>
   </div>
@@ -43,10 +73,10 @@
         Time
       </div>
       <div data-index=4 onclick="javascript:showSort(4)" class="ageheader showheader">
-        Ages
+        Ages <div class="arrow arrow-down"></div>
       </div>
-      <div data-index=5 onclick="javascript:showSort(5)" class="priceheader showheader">
-        Price
+      <div data-index=5 onclick="javascript:showSort(5)" class="priceheader pointer showheader">
+        Price <div class="arrow arrow-down"></div>
       </div>
       <div data-index=6 onclick="javascript:showSort(6)" class="notesheader showheader">
         Notes
@@ -78,7 +108,7 @@
 
                 <% if show.cancelled == true %>
                   <tr class="showtr cancelled">
-                    <td data-index=0 data-attr="<%= show.sortdate %>" "class=showtd date">
+                    <td data-index=0 data-attr="<%= show.sortdate %>" class="showtd date">
                       <%= no_year show.date %>
                     </td>
                     <td data-index=1 data-attr="<%= show.bands %>" class="showtd bands">
@@ -112,10 +142,10 @@
                     <td data-index=3 data-attr="<%= show.time %>" class="showtd time">
                       <%= show.time %>
                     </td>
-                    <td data-index=4 data-attr="<%= show.ages %>" class="showtd ages">
+                    <td data-index=4 data-attr="<%= age_data show.ages %>" class="showtd ages">
                       <%= show.ages %>
                     </td>
-                    <td data-index=5 data-attr="<%= show.price %>" class="showtd price">
+                    <td data-index=5 data-attr="<%= price_data show.price %>" class="showtd price">
                       <%= show.price %>
                     </td>
                     <td data-index=6 data-attr="<%= show.soldout %><%= show.pit %><%= show.inout %>" class="showtd boolean">

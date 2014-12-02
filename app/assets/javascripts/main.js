@@ -26,8 +26,8 @@ $(document).ready(function(){
   // Handle header alignment...
   function headerSize(){
     $('.showheader').each(function(i){
-      var width = $(".showtd[data-index=" + i + "]:visible").width();
-      $(this).css('width', width + 'px');
+      var $tr = $(".showtd[data-index=" + i + "]:visible");
+      $(this).css('width', $tr.width() + 'px');
       if (i === 8) {
         $('.showheaderdiv').show()
       }
