@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Steve Koepke's The List</title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Thelistsf" %>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= include_gon(:init => true) %>
 
@@ -13,13 +14,13 @@
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
   </head>
+
   <body>
 
-
-  <div id="signin">
-        <%= render 'layouts/navigation' %>
-        <%= render 'layouts/messages' %>
-  </div>
+    <div id="signin">
+          <%= render 'layouts/navigation' %>
+          <%= render 'layouts/messages' %>
+    </div>
 
 
 
@@ -30,8 +31,7 @@
 <!--       <div id="main" role="main"> -->
         <%= yield %>
 <!--       </div> -->
-      <footer>
-      </footer>
-    </div> <!--! end of #container -->
+
+    </div>
   </body>
 </html>

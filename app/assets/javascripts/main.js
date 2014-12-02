@@ -13,6 +13,13 @@ $(document).ready(function(){
       $(".scrollingArea").height(bodyheight);
   });
 
+  // Fix body tag due to poor HTML decisions a long time ago...
+  if (window.location.pathname.length > 1) {
+    $('body').css('overflow', 'hidden');
+  } else {
+    $('body').css('overflow', 'initial');
+  }
+
   // Remove auto outlines
   $('.search').css('outline', 'none');
 
@@ -44,7 +51,7 @@ $(document).ready(function(){
       bgimage.src="/mosh.png";
 
       $(bgimage).load(function(){
-          $("#bgimage2").css("background-image","url("+$(this).attr("src")+")").fadeIn();
+          $(".homebody").css("background-image","url("+$(this).attr("src")+")").fadeIn();
       });
   });
 
@@ -70,12 +77,14 @@ $(document).ready(function(){
 
 
   // Search
+  var $searchClear = $('.search-clear');
+
   function showSearch(term){
     if (term === "") {
       $('.showtr').show();
-      $('.search-clear').hide();
+      $searchClear.hide();
     } else {
-      $('.search-clear').show();
+      $searchClear.show();
       $('.showtr').each(function(i){
         var contents = $(this).children('td').text().trim();
         if (contents.toLowerCase().indexOf(term) > 0) {
@@ -105,14 +114,14 @@ $(document).ready(function(){
     }
   });
 
-  $('.search-clear').on('click', function(){
+  $searchClear.on('click', function(){
     term = '';
     showSearch(term);
     $('.search-input').val('');
   });
 
 // Gon gem had problems being imported in application.html
-// This IF statement fixes it...
+// This IF statement prevents errors...
 if (gon.attr) {
   console.log(gon.shows[0].sortdate);
 

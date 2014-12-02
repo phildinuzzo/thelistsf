@@ -1,19 +1,14 @@
 
-
-
-
-
-
-
 <div id="topbar">
   <div id="title">
     <p id="bigtitle">THE LIST</p>
-    <div id="subtitle"><a href="http://www.calweb.com/~skoepke/" id="steve">Steve Koepke's</a> legendary List of Bay Area funk/punk/thrash/ska shows<p> formatted by <a href="mailto:phil248@gmail.com?SUbject=The%20List">Phil DiNuzzo</a></h4>
+    <div id="subtitle">
+      <a href="http://www.calweb.com/~skoepke/" id="steve">Steve Koepke's</a> legendary List of Bay Area funk/punk/thrash/ska shows<p> formatted by <a href="mailto:phil248@gmail.com?SUbject=The%20List">Phil DiNuzzo</a>
     </div>
   </div>
 </div>
 
-<div id="bgimage2">
+<div class="homebody">
 
   <h6>
     <span style="display:none">
@@ -23,20 +18,23 @@
 
   <h3 class="link" style="margin-top:19px;padding-top:40px;">  <%= link_to 'See Upcoming Shows', shows_path %>
   </h3>
+
   <h4 class="link">
     <span style="display:none">
       <%= link_to 'See Archived Shows', archive_path %>
     </span>
   </h4>
 
+  <h5>
+    Playing a show? <a href="mailto:skoepke@stevelist.com?subject=Addition to The List">Let Steve know the details.</a>
+  </h5>
 
-    <% if user_signed_in? %>
-
-      <h4 class="link"><%= link_to 'See Saved Shows', {:controller => "shows",
-                         :action => "saved"},
-                         :method => "get" %>
-      </h4>
-    <% else %>
-    <% end %>
+  <% if user_signed_in? %>
+    <h4 class="link">
+    <%= link_to 'See Saved Shows', {:controller => "shows",
+                       :action => "saved"},
+                       :method => "get" %>
+    </h4>
+  <% end %>
 
 </div>
