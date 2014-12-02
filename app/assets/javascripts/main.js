@@ -120,6 +120,29 @@ $(document).ready(function(){
     $('.search-input').val('');
   });
 
+  // Filters
+  $('.custom-label-checkbox').on('click', function(){
+    console.log($(this))
+    //Hide everything, then show depending on checks
+    if ($(this).siblings('.custom-checkbox').prop('checked') === false) {
+      console.log('YES check');
+      // Pass on a filter term and an index so the search function know where to look
+      // Maybe add terms to an array?
+    } else {
+      console.log('no check');
+
+    }
+
+  });
+
+    //   $('#checkbox1').change(function() {
+    //     if($(this).is(":checked")) {
+    //         var returnVal = confirm("Are you sure?");
+    //         $(this).attr("checked", returnVal);
+    //     }
+    //     $('#textbox1').val($(this).is(':checked'));
+    // });
+
 // Gon gem had problems being imported in application.html
 // This IF statement prevents errors...
 if (gon.attr) {
