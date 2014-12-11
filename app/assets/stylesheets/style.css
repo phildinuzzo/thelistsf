@@ -72,6 +72,8 @@
   width: 100%;
   min-height: 1347px;
   margin-top: -22px; }
+  .homebody h3 {
+    line-height: 1.2; }
   .homebody h5 {
     text-align: center;
     font-size: 1.3em;
