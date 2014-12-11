@@ -4,7 +4,7 @@ The List is a legendary list of upcoming shows (mostly punk and related) around 
 maintaining the list since I was a teenager and I've been using it to find local shows for over 20 years.
 
 Steve has given permission to me and others to use his source material to make more user friendly versions for the web.
-While other sites exist using the same data, I've found them lacking. My goal is to make this the definitive 'pretty' 
+While other sites exist using the same data, I've found them lacking. My goal is to make this the definitive interactive 
 version of Steve's text-based list. 
 
 A sample from the source of The List...
