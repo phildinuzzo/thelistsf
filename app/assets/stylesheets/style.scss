@@ -117,10 +117,19 @@
   // -webkit-box-sizing: border-box;
   // -moz-box-sizing: border-box;
   // box-sizing: border-box;
+
+  // Big homepage links
   h3 {
     line-height: 1.2;
-  }
+    height: 70px;
+    a {
+      &:hover {
+        color: grey;
+      }
+    }
 
+  }
+  // Small homepage links
   h5 {
     text-align: center;
     font-size: 1.3em;

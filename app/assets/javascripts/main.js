@@ -127,7 +127,7 @@ $(document).ready(function(){
     if ($(this).siblings('.custom-checkbox').prop('checked') === false) {
       console.log('YES check');
       // Pass on a filter term and an index so the search function know where to look
-      // Maybe add terms to an array?
+      // Maybe add/remove terms to an array?
     } else {
       console.log('no check');
 
@@ -142,6 +142,19 @@ $(document).ready(function(){
     //     }
     //     $('#textbox1').val($(this).is(':checked'));
     // });
+
+  // Style for main links...
+  // $('h3').mouseover(function(){
+  //   // var $text = $(this).text();
+  //   $(this).hide();
+  //   $('.crookedTitle').show();
+  // }).mouseout(function(){
+  //   $(this).show();
+  //   $('.crookedTitle').hide();
+  // });
+
+
+
 
 // Gon gem had problems being imported in application.html
 // This IF statement prevents errors...
@@ -163,6 +176,90 @@ if (gon.attr) {
   console.log(sortedShows);
 
 }
+
+/////////////////////////////////////////////////////////////////
+
+// var a = [1, 1, 1, 2, 999, 999, 'a', 'a', 'test', 'test', 'test', 'Idaho', true, true, false, [1, 2], [1, 2], [1, 2], [1, 2, 3], {a: 'b', c: 'd'}, {a: 'b', c: 'd'}, {c: 'd', a: 'b'}, {e: 'f'}];
+// console.log(a);
+
+
+// var arrayHandler = function(a, arr, index) {
+//   for (var i=0; i < arr.length; i++) {
+//     if (arr[i] instanceof Array && a.length === arr[i].length && index !== i) {
+//       for (var e = a.length; e--;) {
+//         if (a[e] !== arr[i][e]) {
+//           return
+//         }
+//       }
+//       return 2;
+//     }
+//   }
+// }
+
+
+// var sortObject = function(obj) {
+//   var keys = [];
+
+//   for (var k in obj) {
+//     if (obj.hasOwnProperty(k)) {
+//       keys.push(k);
+//     }
+//   }
+
+//   keys.sort();
+//   var newObj = {};
+
+//   for (var i = 0; i < keys.length; i++) {
+//     newObj[keys[i]] = obj[keys[i]];
+//   }
+//   return newObj;
+// }
+
+
+// var objectHandler = function(a, arr, index) {
+//   for (var i=0; i < arr.length; i++) {
+//     if (arr[i] instanceof Object && Object.keys(a).length === Object.keys(arr[i]).length && index !== i) {
+//       var obj1 = sortObject(a);
+//       var obj2 = sortObject(arr[i]);
+//       if (JSON.stringify(obj1) === JSON.stringify(obj2)) {
+//         return 2;
+//       }
+//     }
+//   }
+// }
+
+
+// var dedupe = function(arr){
+//   var length;
+//   for (var i=0; i < arr.length; i++) {
+//     if (arr[i] instanceof Array) {
+//       length = arrayHandler(arr[i], arr, i);
+//     } else if (arr[i] instanceof Object) {
+//       length = objectHandler(arr[i], arr, i);
+//     } else {
+//       length = arr.filter(function(value){
+//         return value === arr[i];
+//       }).length;
+//     }
+
+//     if (length > 1) {
+//       console.log(a)
+//       arr.splice(i, length - 1);
+//       console.log(a)
+//     }
+
+//   }
+//   console.log(a);
+// }
+
+
+// dedupe(a);
+
+// Dog = new Object;
+
+
+
+
 
 
 
