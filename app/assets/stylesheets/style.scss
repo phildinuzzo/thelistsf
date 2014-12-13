@@ -123,10 +123,20 @@
     line-height: 1.2;
     height: 70px;
     a {
+      color: white;
+      -webkit-transition: color 2s ease-in;
+      -moz-transition: color 2s ease-in;
+      -o-transition: color 2s ease-in;
+      -ms-transition: color 2s ease-in;
+      transition: color 2s ease-in;
       &:hover {
         color: grey;
       }
+      &:focus {
+        color: #800020;
+      }
     }
+
 
   }
   // Small homepage links

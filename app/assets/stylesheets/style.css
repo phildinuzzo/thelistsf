@@ -75,8 +75,17 @@
   .homebody h3 {
     line-height: 1.2;
     height: 70px; }
-    .homebody h3 a:hover {
-      color: grey; }
+    .homebody h3 a {
+      color: white;
+      -webkit-transition: color 2s ease-in;
+      -moz-transition: color 2s ease-in;
+      -o-transition: color 2s ease-in;
+      -ms-transition: color 2s ease-in;
+      transition: color 2s ease-in; }
+      .homebody h3 a:hover {
+        color: grey; }
+      .homebody h3 a:focus {
+        color: #800020; }
   .homebody h5 {
     text-align: center;
     font-size: 1.3em;
