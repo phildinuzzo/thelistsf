@@ -1,0 +1,25 @@
+== The List
+
+The List is a legendary list of upcoming shows (mostly punk and related) around the SF Bay Area. Steve Keopke has been 
+maintaining the list since I was a teenager and I've been using it to find local shows for over 20 years.
+
+Steve has given permission to me and others to use his source material to make more user friendly versions for the web.
+While other sites exist using the same data, I've found them lacking. My goal is to make this the definitive interactive 
+version of Steve's text-based list. 
+
+A sample from the source of The List...
+
+
+nov 24 mon Avi Buffalo, Los Angeles Police Department
+at Harlow's, Sacramento 21+ 7pm/8pm **
+nov 24 mon cancelled:  Rudy Mancuso at Slim's, S.F.
+nov 25 tue dj Shadow & Cut Chemist at the Fox Theater, Oakland a/a 8pm # **
+nov 25 tue Circa Survive, Title Fight, Tera Melos
+at the Regency Ballroom, S.F. a/a $20/$25 7pm/8pm # ***
+
+
+Once a day this project retrieves The List from its source and uses a series of regular expressions to parse out 
+the infromation. 
+
+The first iteration of this project was one of my first adventures in programming and it's pretty raw. I'm currently 
+working on a wide array of improvements, so stay tuned...
