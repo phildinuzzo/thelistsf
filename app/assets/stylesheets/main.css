@@ -344,7 +344,8 @@ table.shows tr:hover {
     text-align: center;
     font-size: 1.8em;
     color: white;
-    font-weight: normal; }
+    font-weight: normal;
+    line-height: 1.3; }
     .scrollingArea h5 span {
       letter-spacing: 1px;
       font-weight: bold; }
