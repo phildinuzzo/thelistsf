@@ -201,14 +201,20 @@ div.field, div.actions {
   /*  float: right;*/ }
 
 .link {
+  height: 70px;
   text-align: center;
   font-size: 40px;
   color: white;
-  margin-top: 50px;
+  padding-top: 40px;
+  margin: 20px 0 0 0;
   text-decoration: none; }
   .link a {
     text-decoration: none;
     color: white; }
+
+h4.link {
+  margin-top: 5px;
+  font-size: 28px; }
 
 .toolbar {
   height: 50px;
