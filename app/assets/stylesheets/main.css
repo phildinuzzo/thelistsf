@@ -340,6 +340,14 @@ table.shows tr:hover {
   width: 100%;
   height: 300px;
   min-height: 300px; }
+  .scrollingArea h5 {
+    text-align: center;
+    font-size: 1.8em;
+    color: white;
+    font-weight: normal; }
+    .scrollingArea h5 span {
+      letter-spacing: 1px;
+      font-weight: bold; }
 
 table.shows tr {
   height: 41px;

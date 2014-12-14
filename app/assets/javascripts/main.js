@@ -80,6 +80,7 @@ $(document).ready(function(){
   var $searchClear = $('.search-clear');
 
   function showSearch(term){
+    $('.no-results').remove();
     if (term === "") {
       $('.showtr').show();
       $searchClear.hide();
@@ -92,7 +93,7 @@ $(document).ready(function(){
         } else {
           $(this).hide();
           if ($('.showtr').length === i + 1 && $('.showtr:visible').length === 0) {
-            // Stuff to do when No Results
+            $('.scrollingArea').append('<h5 class="no-results">No results for <span>"' + term + '"</span> ...could be a good band name.</h5>');
           }
         }
         if ($('.showtr').length === i + 1) {
@@ -117,6 +118,7 @@ $(document).ready(function(){
   $searchClear.on('click', function(){
     term = '';
     showSearch(term);
+    $('.no-results').remove();
     $('.search-input').val('');
   });
 

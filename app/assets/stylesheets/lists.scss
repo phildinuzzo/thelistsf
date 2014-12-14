@@ -29,6 +29,17 @@ table.shows tr:hover {background-color: #A393AD}
   width: 100%;
   height: 300px;
   min-height: 300px;
+  // Blank state for search
+  h5 {
+    text-align: center;
+    font-size: 1.8em;
+    color: white;
+    font-weight: normal;
+    span {
+      letter-spacing: 1px;
+      font-weight: bold;
+    }
+  }
 }
 
 table.shows tr {
