@@ -343,8 +343,8 @@ table.shows tr:hover {
 
 table.shows tr {
   height: 41px;
-  border-bottom: 2px solid black;
-  border-top: 2px solid black; }
+  border-bottom: 1px solid black;
+  border-top: 1px solid black; }
 
 .header {
   background: black;
