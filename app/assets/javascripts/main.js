@@ -130,7 +130,8 @@ $(document).ready(function(){
   });
 
   // Filters - work in progress
-  var filters = ['a/a', '21+', 'Pit warning!', '****', '$10 or less', '$20 or less', 'cancelled'];
+  var filters = ['a/a', '21+', 'Pit warning!', '****', 'cancelled'];
+  // '$10 or less', '$20 or less',
   var selected = [];
 
   $('.custom-label-checkbox').on('click', function(){

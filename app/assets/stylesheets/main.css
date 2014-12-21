@@ -296,7 +296,7 @@ h4.link {
     font-size: 22px;
     position: absolute;
     top: -1px;
-    left: 1px;
+    left: 0.03em;
     color: #000000; }
 
 .custom-label-checkbox {
