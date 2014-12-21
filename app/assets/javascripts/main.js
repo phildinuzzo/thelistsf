@@ -68,25 +68,34 @@ $(document).ready(function(){
   var $searchClear = $('.search-clear');
 
   var searchShows = function(term){
+    $('.showtr').hide();
     $('.showtr').each(function(i){
       var contents = $(this).children('td').text().trim();
 
-      // if (term.some(function(v) { return contents.indexOf(v) >= 0; })) {
-      //     $(this).show();
-      // }
+      if (term.constructor === Array) {
 
+        if (term.length === 0) {
+          $(this).show();
+        } else if (term.some(function(v) { return contents.indexOf(v) >= 0; })) {
+          $(this).show();
+        }
 
-      if (contents.toLowerCase().indexOf(term) > 0) {
-        $(this).show();
       } else {
-        $(this).hide();
-        if ($('.showtr').length === i + 1 && $('.showtr:visible').length === 0) {
-          $('.scrollingArea').append('<h5 class="no-results">No results for <span>"' + term + '"</span> ...could be a good band name.</h5>');
+        $('.custom-checkbox').prop('checked', false);
+
+        if (contents.toLowerCase().indexOf(term) > 0) {
+          $(this).show();
+        } else {
+          $(this).hide();
         }
       }
+
       if ($('.showtr').length === i + 1) {
-        // Stuff to do when Done
+        if ($('.showtr:visible').length === 0) {
+          $('.scrollingArea').append('<h5 class="no-results">No results for <span>"' + term + '"</span></h5>');
+        }
       }
+
     });
   }
 
@@ -123,7 +132,13 @@ $(document).ready(function(){
   // Filters - work in progress
   var filters = ['a/a', '21+', 'Pit warning!', '****', '$10 or less', '$20 or less', 'cancelled'];
   var selected = [];
+
   $('.custom-label-checkbox').on('click', function(){
+
+
+
+    // Need special case for price checks
+
     setTimeout(function(){
       $('.custom-checkbox').each(function(i){
         if ($(this).prop('checked') === true) {
